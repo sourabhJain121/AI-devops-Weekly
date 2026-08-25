@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMU Placement Assistant</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#1b1d22; --muted:#6b7280;
+    --line:#e3e6eb; --accent:#2f5bd7; --accent-soft:#eaf0ff; --warn:#8a5a00; --warn-soft:#fff5e0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#14161a; --panel:#1c1f25; --ink:#e8eaed; --muted:#9aa1ad;
+      --line:#2b2f37; --accent:#7aa2ff; --accent-soft:#20283a; --warn:#e0b055; --warn-soft:#2c2416; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{padding:16px 22px;border-bottom:1px solid var(--line);background:var(--panel);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  h1{font-size:17px;margin:0;font-weight:650}
+  .status{font-size:12.5px;color:var(--muted);margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c33;margin-right:5px}
+  .dot.ok{background:#2c9c5a}
+  main{display:grid;grid-template-columns:1fr 340px;gap:18px;padding:18px;max-width:1280px;margin:0 auto}
+  @media (max-width:900px){ main{grid-template-columns:1fr} }
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  #log{min-height:340px;max-height:58vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+  .msg{padding:11px 14px;border-radius:11px;max-width:88%;white-space:pre-wrap;word-wrap:break-word}
+  .me{align-self:flex-end;background:var(--accent-soft)}
+  .bot{align-self:flex-start;background:transparent;border:1px solid var(--line)}
+  .meta{font-size:11.5px;color:var(--muted);margin-top:7px}
+  form{display:flex;gap:9px;margin-top:14px}
+  input[type=text]{flex:1;padding:11px 13px;border:1px solid var(--line);border-radius:9px;
+    background:var(--bg);color:var(--ink);font-size:15px}
+  button{padding:11px 17px;border:0;border-radius:9px;background:var(--accent);color:#fff;
+    font-size:14px;font-weight:600;cursor:pointer}
+  button:disabled{opacity:.5;cursor:default}
+  button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 10px}
+  .src{border:1px solid var(--line);border-radius:9px;padding:10px;margin-bottom:9px;font-size:13px}
+  .src b{font-weight:620}
+  .src .ex{color:var(--muted);font-size:12.5px;margin-top:6px;max-height:88px;overflow:hidden}
+  .score{float:right;color:var(--muted);font-size:11.5px}
+  .doc{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
+  .notice{background:var(--warn-soft);color:var(--warn);border-radius:9px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+  label.row{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);margin-top:10px}
+  code{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>BMU Placement Assistant</h1>
+  <div class="status">
+    <span><span id="odot" class="dot"></span><span id="omodel">checking Ollama&hellip;</span></span>
+    <span id="kb">knowledge: &mdash;</span>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div id="empty" class="notice">
+      Knowledge base is empty. Drop BMU placement documents into
+      <code>knowledge/bmu/</code> and press <b>Ingest folder</b>, or upload a file on the right.
+    </div>
+    <div id="log"></div>
+    <form id="f">
+      <input id="q" type="text" autocomplete="off"
+             placeholder="Ask about the placement policy, eligibility, requirements&hellip;">
+      <button id="send" type="submit">Ask</button>
+    </form>
+    <label class="row"><input type="checkbox" id="rag" checked> Use RAG (uncheck to ask the raw model)</label>
+  </section>
+
+  <aside>
+    <div class="panel" style="margin-bottom:16px">
+      <h2>Knowledge base</h2>
+      <div id="docs"></div>
+      <label class="row" style="margin-top:12px">
+        <input type="file" id="file" accept=".pdf,.md,.txt">
+      </label>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="ghost" id="up" type="button">Upload</button>
+        <button class="ghost" id="ing" type="button">Ingest folder</button>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Sources for last answer</h2>
+      <div id="sources"><p style="color:var(--muted);font-size:13px">No answer yet.</p></div>
+    </div>
+  </aside>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => (s == null ? "" : String(s)).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+async function refresh(){
+  try{
+    const h = await (await fetch("/api/health")).json();
+    $("odot").className = "dot" + (h.ollama_reachable ? " ok" : "");
+    $("omodel").textContent = h.ollama_reachable ? h.llm_model : "Ollama unreachable";
+    const k = h.knowledge;
+    $("kb").textContent = "knowledge: " + k.total_chunks + " chunks / " + k.documents.length + " docs";
+    $("empty").style.display = k.total_chunks ? "none" : "block";
+    $("docs").innerHTML = k.documents.length
+      ? k.documents.map(d => '<div class="doc"><span>' + esc(d.document_name) +
+          '</span><span style="color:var(--muted)">' + d.chunks + '</span></div>').join("")
+      : '<p style="color:var(--muted);font-size:13px">Nothing ingested yet.</p>';
+  }catch(e){ $("omodel").textContent = "API unreachable"; }
+}
+
+function bubble(cls, text){
+  const d = document.createElement("div");
+  d.className = "msg " + cls;
+  d.textContent = text;
+  $("log").appendChild(d);
+  $("log").scrollTop = $("log").scrollHeight;
+  return d;
+}
+
+function showSources(list){
+  $("sources").innerHTML = list.length
+    ? list.map(s => '<div class="src"><span class="score">' + s.score + '</span>' +
+        '<b>[' + s.n + '] ' + esc(s.document_name) + '</b>' +
+        '<div style="color:var(--muted);font-size:12px">' + esc(s.section || "") +
+        (s.page ? " &middot; page " + s.page : "") + " &middot; " + esc(s.source_type) + '</div>' +
+        '<div class="ex">' + esc(s.excerpt) + '</div></div>').join("")
+    : '<p style="color:var(--muted);font-size:13px">No sources were retrieved for that answer.</p>';
+}
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const message = $("q").value.trim();
+  if(!message) return;
+  $("q").value = ""; $("send").disabled = true;
+  bubble("me", message);
+  const pending = bubble("bot", "Thinking…");
+  try{
+    const r = await fetch("/api/chat", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({message: message, use_rag: $("rag").checked})
+    });
+    const d = await r.json();
+    if(d.error){ pending.textContent = "Error: " + d.error; showSources([]); }
+    else{
+      pending.textContent = d.reply;
+      const m = document.createElement("div");
+      m.className = "meta";
+      const toks = d.completion_tokens ? " · " + d.prompt_tokens + "→" + d.completion_tokens + " tokens" : "";
+      m.textContent = d.model + " · " + d.latency_s + "s" + toks + " · " +
+        (d.rag ? (d.sources || []).length + " sources" : "no RAG");
+      pending.appendChild(m);
+      showSources(d.sources || []);
+    }
+  }catch(err){ pending.textContent = "Request failed: " + err; }
+  $("send").disabled = false; $("q").focus();
+});
+
+$("ing").addEventListener("click", async () => {
+  $("ing").disabled = true; $("ing").textContent = "Ingesting…";
+  try{
+    const d = await (await fetch("/api/ingest", {method:"POST"})).json();
+    bubble("bot", d.error ? "Ingest failed: " + d.error
+      : "Ingested " + d.documents.length + " document(s), " + d.total_chunks + " chunks.");
+  }catch(e){ bubble("bot", "Ingest failed: " + e); }
+  $("ing").disabled = false; $("ing").textContent = "Ingest folder"; refresh();
+});
+
+$("up").addEventListener("click", async () => {
+  const f = $("file").files[0];
+  if(!f){ bubble("bot", "Choose a file first."); return; }
+  const fd = new FormData(); fd.append("file", f);
+  $("up").disabled = true; $("up").textContent = "Uploading…";
+  try{
+    const d = await (await fetch("/api/upload", {method:"POST", body:fd})).json();
+    bubble("bot", d.error ? "Upload failed: " + d.error
+      : "Ingested " + d.document_name + ": " + d.chunks + " chunks from " + d.pages + " page(s).");
+  }catch(e){ bubble("bot", "Upload failed: " + e); }
+  $("up").disabled = false; $("up").textContent = "Upload"; refresh();
+});
+
+refresh();
+</script>
+</body>
+</html>
