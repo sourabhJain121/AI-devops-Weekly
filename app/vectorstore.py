@@ -54,17 +54,41 @@ def delete_document(document_name: str) -> None:
     collection().delete(where={"document_name": document_name})
 
 
+def delete_by_where(where: dict) -> None:
+    """Delete chunks matching a metadata filter (e.g. company_id or candidate_id)."""
+    if where:
+        collection().delete(where=where)
+
+
+def get_by_where(where: dict) -> list[dict]:
+    """Retrieve raw chunks and metadata matching a metadata filter."""
+    col = collection()
+    if col.count() == 0:
+        return []
+    data = col.get(where=where, include=["documents", "metadatas"])
+    items = []
+    for text, meta in zip(data["documents"], data["metadatas"]):
+        items.append({"text": text, **meta})
+    return items
+
+
 def query(embedding: list[float], top_k: int, where: dict | None = None) -> list[dict]:
     col = collection()
-    n_results = min(top_k, col.count())
-    if n_results == 0:
+    if col.count() == 0:
         return []
+    
+    # Chroma returns up to count() results
+    n_results = min(top_k, col.count())
     result = col.query(
         query_embeddings=[embedding],
         n_results=n_results,
         where=where or None,
         include=["documents", "metadatas", "distances"],
     )
+    
+    if not result or not result.get("documents") or not result["documents"][0]:
+        return []
+        
     hits = []
     for text, meta, distance in zip(
         result["documents"][0], result["metadatas"][0], result["distances"][0]
@@ -83,16 +107,29 @@ def stats() -> dict:
     col = collection()
     total = col.count()
     documents: dict[str, dict] = {}
+    source_counts: dict[str, int] = {}
+    
     if total:
         data = col.get(include=["metadatas"])
         for meta in data["metadatas"]:
             name = meta.get("document_name", "unknown")
+            stype = meta.get("source_type", "unknown")
+            
             entry = documents.setdefault(
-                name, {"document_name": name, "source_type": meta.get("source_type"), "chunks": 0}
+                name, {
+                    "document_name": name,
+                    "source_type": stype,
+                    "company_id": meta.get("company_id"),
+                    "candidate_id": meta.get("candidate_id"),
+                    "chunks": 0
+                }
             )
             entry["chunks"] += 1
+            source_counts[stype] = source_counts.get(stype, 0) + 1
+
     return {
         "total_chunks": total,
+        "source_counts": source_counts,
         "documents": sorted(documents.values(), key=lambda d: d["document_name"]),
     }
 
@@ -104,3 +141,4 @@ def reset() -> None:
     except Exception:
         pass
     _collection = None
+

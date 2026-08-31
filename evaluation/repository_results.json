@@ -1,0 +1,147 @@
+{
+  "total_questions": 10,
+  "correct": 10,
+  "accuracy_pct": 100.0,
+  "details": [
+    {
+      "id": "REPO_001",
+      "question": "Which file handles document text extraction?",
+      "relevant_files": [
+        "app/documents.py"
+      ],
+      "requires_multi_file": false,
+      "expected_answer": "app/documents.py is responsible for extracting page-by-page text from PDF, MD, and TXT files using PyPDF.",
+      "reply": "The file that handles document text extraction is `app/documents.py`. This file contains the `DocumentLoader` class, which is responsible for loading and extracting text from PDF and Markdown files. The `DocumentLoader` class uses the `PyPDF` library to extract text from PDF files and the `read` function from the `io` module to read text from Markdown and plain text files.",
+      "is_correct": true,
+      "has_relevant_files": true,
+      "latency_s": 244.62
+    },
+    {
+      "id": "REPO_002",
+      "question": "Which component performs section-aware text chunking?",
+      "relevant_files": [
+        "app/chunking.py"
+      ],
+      "requires_multi_file": false,
+      "expected_answer": "app/chunking.py performs section-aware heading-bounded text chunking.",
+      "reply": "The component that performs section-aware text chunking is `app/chunking.py`. This module contains the `Section-aware heading-bounded text chunker` function, which ensures that chunks never cross heading boundaries to guarantee semantic isolation and accurate citation metadata.",
+      "is_correct": true,
+      "has_relevant_files": true,
+      "latency_s": 11.29
+    },
+    {
+      "id": "REPO_003",
+      "question": "Where is the Ollama LLM called in the codebase?",
+      "relevant_files": [
+        "app/llm.py"
+      ],
+      "requires_multi_file": false,
+      "expected_answer": "app/llm.py sends requests to Ollama API endpoints (/api/embed and /api/chat).",
+      "reply": "The Ollama LLM is called in the `app/llm.py` module. Specifically, the `llm.py` module is responsible for generating embeddings via the `/api/embed` endpoint, which is used by the `rag.py` module to generate the LLM.",
+      "is_correct": true,
+      "has_relevant_files": true,
+      "latency_s": 12.35
+    },
+    {
+      "id": "REPO_004",
+      "question": "What happens after a user submits a query to FastAPI?",
+      "relevant_files": [
+        "app/main.py",
+        "app/orchestrator.py"
+      ],
+      "requires_multi_file": true,
+      "expected_answer": "app/main.py receives the query at /api/query and forwards it to orchestrator.route_and_execute.",
+      "reply": "After a user submits a query to FastAPI, the query is routed to the appropriate service based on the user's question. The service then processes the query and returns the appropriate response.\n\nIn this case, the user's query is routed to the \"orchestrator\" service, which classifies the user's question into one of the following categories:\n\n* BMU_POLICY\n* COMPANY_JD\n* ELIGIBILITY\n* RESUME_MATCH\n* SKILL_GAP\n* RESUME_IMPROVEMENT\n* INTERVIEW_PREPARATION\n* REPO_RAG\n\nBased on the classification, the orchestrator service routes the query to the appropriate service, which processes the query and returns the appropriate response. For example, if the user's query is classified as BMU_POLICY, the orchestrator service routes the query to the \"eligibility\" service, which determines the user's placement eligibility based on the BMU policy and the user's resume and JD.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 16.02
+    },
+    {
+      "id": "REPO_005",
+      "question": "Which modules participate in the RAG pipeline?",
+      "relevant_files": [
+        "app/rag.py",
+        "app/vectorstore.py",
+        "app/llm.py",
+        "app/chunking.py"
+      ],
+      "requires_multi_file": true,
+      "expected_answer": "app/rag.py orchestrates retrieval via vectorstore.py, context formatting, and generation via llm.py.",
+      "reply": "The RAG pipeline in the BMU Placement Intelligence Assistant architecture is implemented in the following modules:\n\n1. `app/rag.py`: This module is the core of the RAG pipeline, and it is responsible for embedding queries, fetching top-k hits, filtering out distant hits, constructing grounded system prompts, and falling back to insufficient-information responses when no relevant context exists.\n2. `app/orchestrator.py`: This module acts as an intent router and dispatcher, classifying user questions into BMU_POLICY, COMPANY_JD, ELIGIBILITY, RESUME_MATCH, SKILL_GAP, RESUME_IMPROVEMENT, INTERVIEW_PREPARATION, or REPO_RAG, and routing requests to specialized services.\n3. `app/services/`: This directory contains several modules that participate in the RAG pipeline, including `resume.py`, `jd.py`, `eligibility.py`, `matching.py`, `skill_gap.py`, `improvement.py`, `interview.py`, and `repo_rag.py`. These modules perform specific tasks such as candidate resume parsing, entity extraction, and candidate storage, and they are responsible for generating embeddings, fetching top-k hits, filtering out distant hits, constructing grounded system prompts, and falling back to insufficient-information responses when no relevant context exists.\n\nIn summary, the RAG pipeline in the BMU Placement Intelligence Assistant architecture is implemented in the `app/rag.py` module, the `app/orchestrator.py` module, and the `app/services/` directory, which contains several modules that participate in the RAG pipeline.",
+      "is_correct": true,
+      "has_relevant_files": true,
+      "latency_s": 22.05
+    },
+    {
+      "id": "REPO_006",
+      "question": "Where is company metadata isolation implemented?",
+      "relevant_files": [
+        "app/vectorstore.py",
+        "app/services/jd.py"
+      ],
+      "requires_multi_file": true,
+      "expected_answer": "app/vectorstore.py enforces metadata filtering using company_id, and app/services/jd.py tags company chunks during ingestion.",
+      "reply": "Company metadata isolation is implemented in the `jd.py` module under the `app/services/` directory.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 7.66
+    },
+    {
+      "id": "REPO_007",
+      "question": "Where is candidate information stored and managed?",
+      "relevant_files": [
+        "app/services/resume.py",
+        "app/vectorstore.py"
+      ],
+      "requires_multi_file": true,
+      "expected_answer": "app/services/resume.py parses resumes, extracts candidate profile entities, and indexes chunks with candidate_id.",
+      "reply": "Candidate information is stored and managed in the `resume.py` module under the `app/services/` directory. This module is responsible for candidate resume parsing, entity extraction (e.g., CGPA, backlogs, skills), and candidate storage.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 15.25
+    },
+    {
+      "id": "REPO_008",
+      "question": "Where is eligibility calculated?",
+      "relevant_files": [
+        "app/services/eligibility.py"
+      ],
+      "requires_multi_file": false,
+      "expected_answer": "app/services/eligibility.py deterministically evaluates candidate CGPA and backlogs against policy thresholds.",
+      "reply": "Eligibility is calculated in the eligibility.py module.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 5.5
+    },
+    {
+      "id": "REPO_009",
+      "question": "Which component performs resume vs JD skill matching?",
+      "relevant_files": [
+        "app/services/matching.py"
+      ],
+      "requires_multi_file": false,
+      "expected_answer": "app/services/matching.py calculates skill match score percentages and lists matching/missing skills.",
+      "reply": "The component that performs resume vs JD skill matching is the \"matching.py\" module.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 0.88
+    },
+    {
+      "id": "REPO_010",
+      "question": "What happens from the moment a user submits /api/query until the final answer is returned?",
+      "relevant_files": [
+        "app/main.py",
+        "app/orchestrator.py",
+        "app/rag.py",
+        "app/vectorstore.py",
+        "app/llm.py"
+      ],
+      "requires_multi_file": true,
+      "expected_answer": "Request enters app/main.py, orchestrator.py classifies intent, routes to service or rag.py, queries ChromaDB via vectorstore.py, builds context, and invokes llm.py.",
+      "reply": "When a user submits the /api/query endpoint, the following steps occur:\n\n1. The user's input is received and processed by the FastAPI web server.\n2. The input is routed to the Intent Router & Dispatcher (orchestrator.py) for classification and dispatching to the appropriate service.\n3. The Intent Router & Dispatcher determines the user's intent (e.g., BMU_POLICY, COMPANY_JD, ELIGIBILITY, RESUME_MATCH, SKILL_GAP, RESUME_IMPROVEMENT, INTERVIEW_PREPARATION, or REPO_RAG) and routes the request to the appropriate service.\n4. The service (e.g., resume.py, jd.py, eligibility.py, matching.py, skill_gap.py, improvement.py, interview.py, repo_rag.py) processes the user's input and generates the final answer.\n5. The final answer is returned to the user through the FastAPI web server.\n\nThe entire process is handled by the FastAPI web server, which acts as a central hub for routing requests to the appropriate services and returning the final answers. The services (e.g., resume.py, jd.py, eligibility.py, matching.py, skill_gap.py, improvement.py, interview.py, repo_rag.py) are responsible for processing the user's input and generating the final answers.",
+      "is_correct": true,
+      "has_relevant_files": false,
+      "latency_s": 10.74
+    }
+  ]
+}

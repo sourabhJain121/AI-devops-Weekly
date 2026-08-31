@@ -1,0 +1,75 @@
+[
+  {
+    "case_id": "CASE_001",
+    "case_name": "Case 1 / 4 — Grounded Retrieval & Generation Success",
+    "category": "BMU_POLICY",
+    "question": "What is the minimum CGPA requirement for BMU placement participation?",
+    "retrieved_chunks": [
+      {
+        "document_name": "SAMPLE_placement_policy.md",
+        "section": "1. Eligibility Criteria",
+        "score": 0.82,
+        "text": "A student must maintain a minimum Cumulative Grade Point Average (CGPA) of 6.5 on a 10-point scale..."
+      }
+    ],
+    "context_sent_to_llm": "[1] SAMPLE_placement_policy.md > 1. Eligibility Criteria\nA student must maintain a minimum Cumulative Grade Point Average (CGPA) of 6.5 on a 10-point scale...",
+    "llm_response": "The minimum CGPA requirement for BMU placement participation is 6.5 on a 10-point scale. [1] SAMPLE_placement_policy.md",
+    "expected_answer": "6.5 CGPA on a 10-point scale",
+    "is_correct": true,
+    "relevance_score": 5.0,
+    "analysis": "Optimal RAG execution: High-similarity chunk retrieved, context accurately cited, zero hallucination."
+  },
+  {
+    "case_id": "CASE_002",
+    "case_name": "Case 2 — Irrelevant Retrieval Impact",
+    "category": "REPO_RAG",
+    "question": "Which service file handles document text extraction?",
+    "retrieved_chunks": [
+      {
+        "document_name": "SAMPLE_placement_policy.md",
+        "section": "4. Documents Required",
+        "score": 0.42,
+        "text": "Students must submit their updated resume in PDF format..."
+      }
+    ],
+    "context_sent_to_llm": "[1] SAMPLE_placement_policy.md > 4. Documents Required\nStudents must submit their updated resume in PDF format...",
+    "llm_response": "The service file that handles document text extraction is SAMPLE_placement_policy.md.",
+    "expected_answer": "app/documents.py",
+    "is_correct": false,
+    "relevance_score": 2.0,
+    "analysis": "Irrelevant chunk retrieved due to semantic keyword overlap on 'document'. System correctly attempted grounding but lacked python codebase index."
+  },
+  {
+    "case_id": "CASE_003",
+    "case_name": "Case 3 — Missed Information (Threshold Filter)",
+    "category": "RESUME_MATCH",
+    "question": "Does my resume match the company JD requirements?",
+    "retrieved_chunks": [],
+    "context_sent_to_llm": "",
+    "llm_response": "Please upload a candidate resume first to compare against the Job Description.",
+    "expected_answer": "Missing candidate profile warning",
+    "is_correct": true,
+    "relevance_score": 4.0,
+    "analysis": "No relevant chunks passed max_distance threshold (0.65). Intent router safely returned structured warning rather than allowing LLM hallucination."
+  },
+  {
+    "case_id": "CASE_004",
+    "case_name": "Case 5 — Correct Retrieval + Hallucinated Generation Prevention",
+    "category": "INSUFFICIENT_INFO",
+    "question": "What is the exact stipend amount for the 2030 summer internship?",
+    "retrieved_chunks": [
+      {
+        "document_name": "SAMPLE_placement_policy.md",
+        "section": "General Rules",
+        "score": 0.51,
+        "text": "Placement Cell handles internship coordination for current batches..."
+      }
+    ],
+    "context_sent_to_llm": "[1] SAMPLE_placement_policy.md > General Rules\nPlacement Cell handles internship coordination for current batches...",
+    "llm_response": "I could not find sufficient information in the provided documents to answer this question reliably.",
+    "expected_answer": "Insufficient information warning",
+    "is_correct": true,
+    "relevance_score": 5.0,
+    "analysis": "Strict system prompt instructions prevented LLM from inventing a 2030 stipend amount, forcing an explicit insufficient-information response."
+  }
+]

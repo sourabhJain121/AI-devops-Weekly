@@ -62,12 +62,13 @@ def _sources(hits: list[dict]) -> list[dict]:
     ]
 
 
-def answer(question: str, top_k: int | None = None, use_rag: bool = True) -> dict:
+def answer(question: str, top_k: int | None = None, use_rag: bool = True, model: str | None = None) -> dict:
     """Full pipeline. Returns the reply together with everything it was based on."""
     if not use_rag:
         result = llm.generate(
             "You are a helpful assistant. Answer from your own knowledge and say so.",
             question,
+            model=model,
         )
         return {**result, "rag": False, "sources": [], "context": ""}
 
@@ -76,7 +77,7 @@ def answer(question: str, top_k: int | None = None, use_rag: bool = True) -> dic
         # Nothing passed the relevance threshold - do not let the model guess.
         return {
             "reply": INSUFFICIENT,
-            "model": config.LLM_MODEL,
+            "model": model or config.LLM_MODEL,
             "latency_s": 0.0,
             "prompt_tokens": None,
             "completion_tokens": None,
@@ -87,5 +88,5 @@ def answer(question: str, top_k: int | None = None, use_rag: bool = True) -> dic
         }
 
     context = build_context(hits)
-    result = llm.generate(SYSTEM_PROMPT.format(context=context), question)
+    result = llm.generate(SYSTEM_PROMPT.format(context=context), question, model=model)
     return {**result, "rag": True, "sources": _sources(hits), "context": context, "grounded": True}

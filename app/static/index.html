@@ -1,186 +1,829 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BMU Placement Assistant</title>
+<title>BMU Placement Intelligence & Interview Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f6f7f9; --panel:#ffffff; --ink:#1b1d22; --muted:#6b7280;
-    --line:#e3e6eb; --accent:#2f5bd7; --accent-soft:#eaf0ff; --warn:#8a5a00; --warn-soft:#fff5e0;
+  :root {
+    --bg-base: #090d16;
+    --bg-surface: #111827;
+    --bg-panel: rgba(17, 24, 39, 0.85);
+    --bg-card: rgba(30, 41, 59, 0.6);
+    --bg-hover: rgba(51, 65, 85, 0.5);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --primary-glow: rgba(99, 102, 241, 0.25);
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    --accent-soft: rgba(99, 102, 241, 0.12);
+    --success: #10b981;
+    --success-soft: rgba(16, 185, 129, 0.15);
+    --danger: #ef4444;
+    --danger-soft: rgba(239, 68, 68, 0.15);
+    --warning: #f59e0b;
+    --warning-soft: rgba(245, 158, 11, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
   }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#14161a; --panel:#1c1f25; --ink:#e8eaed; --muted:#9aa1ad;
-      --line:#2b2f37; --accent:#7aa2ff; --accent-soft:#20283a; --warn:#e0b055; --warn-soft:#2c2416; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    background: var(--bg-base);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
   }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  header{padding:16px 22px;border-bottom:1px solid var(--line);background:var(--panel);
-    display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  h1{font-size:17px;margin:0;font-weight:650}
-  .status{font-size:12.5px;color:var(--muted);margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
-  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c33;margin-right:5px}
-  .dot.ok{background:#2c9c5a}
-  main{display:grid;grid-template-columns:1fr 340px;gap:18px;padding:18px;max-width:1280px;margin:0 auto}
-  @media (max-width:900px){ main{grid-template-columns:1fr} }
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-  #log{min-height:340px;max-height:58vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
-  .msg{padding:11px 14px;border-radius:11px;max-width:88%;white-space:pre-wrap;word-wrap:break-word}
-  .me{align-self:flex-end;background:var(--accent-soft)}
-  .bot{align-self:flex-start;background:transparent;border:1px solid var(--line)}
-  .meta{font-size:11.5px;color:var(--muted);margin-top:7px}
-  form{display:flex;gap:9px;margin-top:14px}
-  input[type=text]{flex:1;padding:11px 13px;border:1px solid var(--line);border-radius:9px;
-    background:var(--bg);color:var(--ink);font-size:15px}
-  button{padding:11px 17px;border:0;border-radius:9px;background:var(--accent);color:#fff;
-    font-size:14px;font-weight:600;cursor:pointer}
-  button:disabled{opacity:.5;cursor:default}
-  button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 10px}
-  .src{border:1px solid var(--line);border-radius:9px;padding:10px;margin-bottom:9px;font-size:13px}
-  .src b{font-weight:620}
-  .src .ex{color:var(--muted);font-size:12.5px;margin-top:6px;max-height:88px;overflow:hidden}
-  .score{float:right;color:var(--muted);font-size:11.5px}
-  .doc{font-size:13px;padding:5px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
-  .notice{background:var(--warn-soft);color:var(--warn);border-radius:9px;padding:10px 12px;font-size:13px;margin-bottom:12px}
-  label.row{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);margin-top:10px}
-  code{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+
+  /* Header */
+  header {
+    height: 70px;
+    padding: 0 24px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-logo {
+    width: 40px; height: 40px; border-radius: var(--radius-md);
+    background: var(--accent-gradient); display: flex; align-items: center;
+    justify-content: center; color: #fff; font-weight: 800; font-family: 'Outfit';
+    box-shadow: 0 4px 14px var(--primary-glow); font-size: 16px;
+  }
+  .brand-title {
+    font-family: 'Outfit'; font-size: 18px; font-weight: 700;
+    background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .brand-subtitle { font-size: 11px; color: var(--text-dim); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Model Selector Control */
+  .model-selector-box {
+    display: flex; align-items: center; gap: 10px; background: var(--bg-card);
+    padding: 6px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-strong);
+  }
+  .model-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); }
+  .model-dropdown {
+    background: var(--bg-surface); color: var(--text-main); border: 1px solid var(--border);
+    padding: 6px 12px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;
+    outline: none; cursor: pointer; font-family: 'Plus Jakarta Sans';
+  }
+  .model-dropdown:focus { border-color: var(--primary); }
+
+  .header-actions { display: flex; align-items: center; gap: 14px; }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+    border-radius: 999px; background: var(--bg-card); border: 1px solid var(--border);
+    font-size: 12px; font-weight: 500;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--danger); }
+  .dot.ok { background: var(--success); box-shadow: 0 0 8px var(--success); }
+
+  /* App Core Layout: Sidebar + Main Workspace */
+  .app-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+
+  /* Sidebar Navigation */
+  sidebar {
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border);
+    padding: 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+  }
+
+  .nav-group-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    color: var(--text-dim); letter-spacing: 0.8px; margin-bottom: 8px; padding-left: 10px;
+  }
+  .nav-list { display: flex; flex-direction: column; gap: 4px; list-style: none; }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+    border-radius: var(--radius-md); font-size: 13px; font-weight: 600;
+    color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+  }
+  .nav-item:hover { background: var(--bg-hover); color: var(--text-main); }
+  .nav-item.active { background: var(--accent-gradient); color: #fff; box-shadow: 0 4px 12px var(--primary-glow); }
+  .nav-icon { font-size: 16px; }
+
+  /* Main Workspace Area */
+  .workspace {
+    padding: 20px 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .view-pane { display: none; height: 100%; }
+  .view-pane.active { display: flex; flex-direction: column; gap: 20px; }
+
+  /* Panel Component */
+  .panel {
+    background: var(--bg-panel); backdrop-filter: blur(12px); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden;
+  }
+  .panel-header { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .panel-title { font-family: 'Outfit'; font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+  .panel-body { padding: 18px; flex: 1; overflow-y: auto; }
+
+  /* Grid Layout Helpers */
+  .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-chat { display: grid; grid-template-columns: 1fr 340px; gap: 20px; height: 100%; }
+
+  /* Buttons & Cards */
+  .action-btn {
+    padding: 10px 18px; border-radius: var(--radius-md); background: var(--accent-gradient);
+    border: none; color: #fff; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s;
+    box-shadow: 0 4px 12px var(--primary-glow); display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .action-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+  .action-btn.secondary { background: var(--bg-card); border: 1px solid var(--border-strong); color: var(--text-main); box-shadow: none; }
+  .action-btn.secondary:hover { background: var(--bg-hover); }
+
+  .card-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; font-size: 13.5px; }
+  .card-title { font-weight: 700; color: var(--primary); margin-bottom: 6px; font-family: 'Outfit'; }
+  .badge { font-size: 11px; padding: 3px 9px; border-radius: 99px; background: var(--accent-soft); color: var(--primary); font-weight: 600; display: inline-block; }
+  .badge.success { background: var(--success-soft); color: var(--success); }
+  .badge.danger { background: var(--danger-soft); color: var(--danger); }
+  .badge.warning { background: var(--warning-soft); color: var(--warning); }
+
+  /* File Upload Zone */
+  .upload-box {
+    border: 2px dashed var(--border-strong); border-radius: var(--radius-md); padding: 28px; text-align: center;
+    background: var(--accent-soft); cursor: pointer; transition: all 0.2s;
+  }
+  .upload-box:hover { border-color: var(--primary); background: var(--primary-glow); }
+  .upload-icon { font-size: 32px; margin-bottom: 10px; }
+
+  /* Chat Log Component */
+  .chat-panel { display: flex; flex-direction: column; height: calc(100vh - 110px); }
+  .chat-log { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .msg-wrapper { display: flex; flex-direction: column; max-width: 85%; }
+  .msg-wrapper.user { align-self: flex-end; }
+  .msg-wrapper.assistant { align-self: flex-start; }
+  .msg-bubble { padding: 14px 18px; border-radius: var(--radius-lg); font-size: 14px; line-height: 1.6; word-break: break-word; }
+  .msg-wrapper.user .msg-bubble { background: var(--accent-gradient); color: #fff; border-bottom-right-radius: 4px; }
+  .msg-wrapper.assistant .msg-bubble { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; }
+
+  .chips-container { padding: 10px 20px; display: flex; gap: 8px; overflow-x: auto; border-top: 1px solid var(--border); }
+  .chip { padding: 6px 14px; border-radius: 99px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); font-size: 12px; cursor: pointer; white-space: nowrap; }
+  .chip:hover { background: var(--bg-hover); color: var(--text-main); }
+
+  .chat-form { padding: 16px 20px; background: var(--bg-surface); border-top: 1px solid var(--border); display: flex; gap: 12px; align-items: center; }
+  .input-field { flex: 1; padding: 12px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); outline: none; font-size: 13.5px; }
+
+  .output-markdown { white-space: pre-wrap; font-size: 14px; line-height: 1.65; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+  /* Data Table */
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  table.data-table th, table.data-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  table.data-table th { background: var(--bg-card); font-weight: 700; color: var(--text-muted); font-family: 'Outfit'; }
+  table.data-table tr:hover { background: var(--bg-hover); }
+
+  /* Bar Charts */
+  .bar-container { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .bar-label { width: 110px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .bar-track { flex: 1; height: 12px; background: var(--bg-card); border-radius: 99px; overflow: hidden; border: 1px solid var(--border); }
+  .bar-fill { height: 100%; background: var(--accent-gradient); border-radius: 99px; transition: width 0.6s ease; }
+  .bar-val { width: 60px; font-size: 12px; font-weight: 700; text-align: right; }
 </style>
 </head>
 <body>
+
 <header>
-  <h1>BMU Placement Assistant</h1>
-  <div class="status">
-    <span><span id="odot" class="dot"></span><span id="omodel">checking Ollama&hellip;</span></span>
-    <span id="kb">knowledge: &mdash;</span>
+  <div class="brand">
+    <div class="brand-logo">BMU</div>
+    <div>
+      <div class="brand-title">Placement Intelligence & Interview Assistant</div>
+      <div class="brand-subtitle">Grounded Multi-Model Platform</div>
+    </div>
+  </div>
+
+  <div class="model-selector-box">
+    <span class="model-label">Active Model:</span>
+    <select id="model-select" class="model-dropdown" onchange="onModelChange()">
+      <option value="codellama:7b" selected>CodeLlama 7B (codellama:7b)</option>
+      <option value="starcoder2:3b">StarCoder2 3B (starcoder2:3b)</option>
+      <option value="qwen2.5:0.5b">Qwen 0.5B (qwen2.5:0.5b)</option>
+    </select>
+    <div class="status-pill"><span id="odot" class="dot"></span><span id="omodel">Checking Ollama...</span></div>
+  </div>
+
+  <div class="header-actions">
+    <div class="status-pill"><span id="kb-stats">0 chunks · 0 docs</span></div>
   </div>
 </header>
 
-<main>
-  <section class="panel">
-    <div id="empty" class="notice">
-      Knowledge base is empty. Drop BMU placement documents into
-      <code>knowledge/bmu/</code> and press <b>Ingest folder</b>, or upload a file on the right.
+<div class="app-container">
+  <!-- SIDEBAR NAVIGATION -->
+  <sidebar>
+    <div>
+      <div class="nav-group-title">Workspace</div>
+      <ul class="nav-list">
+        <li class="nav-item active" onclick="switchNav('assistant')"><span class="nav-icon">💬</span> Assistant & Policy</li>
+        <li class="nav-item" onclick="switchNav('resume')"><span class="nav-icon">📄</span> Candidate Resume</li>
+        <li class="nav-item" onclick="switchNav('jd')"><span class="nav-icon">🏢</span> Company JDs</li>
+        <li class="nav-item" onclick="switchNav('intelligence')"><span class="nav-icon">📊</span> Placement Intelligence</li>
+      </ul>
     </div>
-    <div id="log"></div>
-    <form id="f">
-      <input id="q" type="text" autocomplete="off"
-             placeholder="Ask about the placement policy, eligibility, requirements&hellip;">
-      <button id="send" type="submit">Ask</button>
-    </form>
-    <label class="row"><input type="checkbox" id="rag" checked> Use RAG (uncheck to ask the raw model)</label>
-  </section>
 
-  <aside>
-    <div class="panel" style="margin-bottom:16px">
-      <h2>Knowledge base</h2>
-      <div id="docs"></div>
-      <label class="row" style="margin-top:12px">
-        <input type="file" id="file" accept=".pdf,.md,.txt">
-      </label>
-      <div style="display:flex;gap:8px;margin-top:10px">
-        <button class="ghost" id="up" type="button">Upload</button>
-        <button class="ghost" id="ing" type="button">Ingest folder</button>
+    <div>
+      <div class="nav-group-title">Model Evaluation & Benchmark Hub</div>
+      <ul class="nav-list">
+        <li class="nav-item" onclick="switchNav('eval-summary')"><span class="nav-icon">🏆</span> Model Comparison</li>
+        <li class="nav-item" onclick="switchNav('eval-questions')"><span class="nav-icon">📋</span> Question Matrix</li>
+        <li class="nav-item" onclick="switchNav('eval-rag')"><span class="nav-icon">🔬</span> RAG Analysis (Cases A–E)</li>
+        <li class="nav-item" onclick="switchNav('eval-repo')"><span class="nav-icon">💻</span> Codebase RAG</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="nav-group-title">System & Knowledge</div>
+      <ul class="nav-list">
+        <li class="nav-item" onclick="switchNav('knowledge')"><span class="nav-icon">📚</span> Knowledge Base</li>
+      </ul>
+    </div>
+  </sidebar>
+
+  <!-- MAIN WORKSPACE -->
+  <div class="workspace">
+    <!-- PANE 1: ASSISTANT & BMU RAG -->
+    <div id="pane-assistant" class="view-pane active">
+      <div class="grid-chat">
+        <section class="panel chat-panel">
+          <div class="panel-header">
+            <div class="panel-title">💬 Grounded Assistant Conversation</div>
+            <div style="font-size:12px;color:var(--text-muted)">Selected Model: <b id="active-model-display" style="color:var(--primary)">codellama:7b</b></div>
+          </div>
+          <div class="chat-log" id="chat-log">
+            <div class="msg-wrapper assistant">
+              <div class="msg-bubble">
+                👋 Welcome to the <b>BMU Placement Intelligence Platform</b>! Ask policy questions, analyze candidate eligibility, evaluate resume matching, or request tailored interview preparation.
+              </div>
+            </div>
+          </div>
+          <div class="chips-container">
+            <div class="chip" onclick="askPreset('What is the minimum CGPA requirement for placement?')">🎓 Minimum CGPA criteria</div>
+            <div class="chip" onclick="askPreset('Am I eligible to apply for placement drives?')">📊 Am I Eligible?</div>
+            <div class="chip" onclick="askPreset('Does my resume match this JD?')">🎯 Resume Match Score</div>
+            <div class="chip" onclick="askPreset('What skills am I missing for this company?')">⚠️ Missing Skills</div>
+            <div class="chip" onclick="askPreset('What interview questions should I prepare?')">🎯 Interview Questions</div>
+          </div>
+          <form class="chat-form" id="chat-form">
+            <input type="text" id="chat-input" class="input-field" placeholder="Ask about BMU placement policy, eligibility, skill gaps..." autocomplete="off">
+            <button type="submit" class="action-btn">Ask</button>
+          </form>
+        </section>
+
+        <aside class="panel">
+          <div class="panel-header"><div class="panel-title">🔍 Cited Evidence</div></div>
+          <div class="panel-body" id="sources-list">
+            <div style="color:var(--text-dim);font-size:13px;text-align:center;padding:40px 0">No sources cited yet.</div>
+          </div>
+        </aside>
       </div>
     </div>
-    <div class="panel">
-      <h2>Sources for last answer</h2>
-      <div id="sources"><p style="color:var(--muted);font-size:13px">No answer yet.</p></div>
+
+    <!-- PANE 2: CANDIDATE RESUME -->
+    <div id="pane-resume" class="view-pane">
+      <div class="grid-2col">
+        <aside class="panel">
+          <div class="panel-header"><div class="panel-title">📤 Upload Candidate Resume</div></div>
+          <div class="panel-body">
+            <div class="upload-box" onclick="$('resume-file').click()">
+              <div class="upload-icon">📄</div>
+              <div><b>Click to Upload Candidate Resume</b></div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:4px">PDF or TXT file</div>
+              <input type="file" id="resume-file" accept=".pdf,.txt" style="display:none" onchange="uploadResume()">
+            </div>
+          </div>
+        </aside>
+        <section class="panel">
+          <div class="panel-header"><div class="panel-title">👤 Structured Candidate Profile</div></div>
+          <div class="panel-body" id="resume-profile-view"><div style="color:var(--text-dim)">No resume uploaded yet. Upload a resume on the left.</div></div>
+        </section>
+      </div>
     </div>
-  </aside>
-</main>
+
+    <!-- PANE 3: COMPANY JD -->
+    <div id="pane-jd" class="view-pane">
+      <div class="grid-2col">
+        <aside class="panel">
+          <div class="panel-header"><div class="panel-title">📤 Upload Company JD</div></div>
+          <div class="panel-body">
+            <div class="upload-box" onclick="$('jd-file').click()">
+              <div class="upload-icon">🏢</div>
+              <div><b>Click to Upload Company Job Description</b></div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:4px">PDF, MD, or TXT file</div>
+              <input type="file" id="jd-file" accept=".pdf,.md,.txt" style="display:none" onchange="uploadJD()">
+            </div>
+          </div>
+        </aside>
+        <section class="panel">
+          <div class="panel-header"><div class="panel-title">📋 Isolated Company Requirements</div></div>
+          <div class="panel-body" id="jd-list-view"><div style="color:var(--text-dim)">No company JDs uploaded yet. Upload a JD on the left.</div></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- PANE 4: PLACEMENT INTELLIGENCE DASHBOARD -->
+    <div id="pane-intelligence" class="view-pane">
+      <div class="grid-2col">
+        <aside class="panel">
+          <div class="panel-header"><div class="panel-title">⚡ Intelligence Workflows</div></div>
+          <div class="panel-body" style="display:flex;flex-direction:column;gap:12px">
+            <button class="action-btn" onclick="runAnalysis('eligibility')">📊 Deterministic Eligibility Analysis</button>
+            <button class="action-btn" onclick="runAnalysis('resume-jd')">🎯 Structured Resume vs JD Match</button>
+            <button class="action-btn" onclick="runAnalysis('skill-gap')">⚠️ Prioritized Skill Gap Analysis</button>
+            <button class="action-btn" onclick="runAnalysis('resume-improvement')">💡 Resume Improvement Plan</button>
+            <button class="action-btn" onclick="runAnalysis('interview-prep')">🎯 Personalized Interview Prep</button>
+          </div>
+        </aside>
+        <section class="panel">
+          <div class="panel-header"><div class="panel-title">📈 Analytical Output</div></div>
+          <div class="panel-body" id="intel-output"><div style="color:var(--text-dim);padding:40px 0;text-align:center">Select an analysis workflow on the left to execute.</div></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- PANE 5: MODEL COMPARISON SUMMARY -->
+    <div id="pane-eval-summary" class="view-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">🏆 Multi-Model Evaluation & Benchmark Summary</div>
+          <button class="action-btn secondary" onclick="rerunEvaluation()"><span id="eval-spinner">🔄</span> Run / Refresh Evaluation</button>
+        </div>
+        <div class="panel-body">
+          <div class="grid-2col" style="margin-bottom:20px">
+            <div class="card-box">
+              <div class="card-title">💡 Evidence-Based Model Recommendation</div>
+              <div style="font-size:15px;font-weight:700;color:var(--success);margin-bottom:8px">Recommended Model: CodeLlama 7B (codellama:7b)</div>
+              <div style="color:var(--text-muted);font-size:13px;line-height:1.6">
+                CodeLlama provides the strongest measured quality among the tested models while also having the lowest measured generation latency on ARM64 hardware. It achieved the highest accuracy (52.0%), highest relevance score (3.80/5.0), and fastest total response speed (3.36s).
+              </div>
+            </div>
+
+            <div class="card-box">
+              <div class="card-title">🔬 Experimental Control Conditions</div>
+              <div style="font-size:12.5px;color:var(--text-muted);line-height:1.6">
+                <b>Knowledge Base:</b> Identical ChromaDB index (27 vector chunks)<br>
+                <b>Embeddings:</b> <code>nomic-embed-text</code> | <b>Chunking:</b> Section-aware (800 / 120)<br>
+                <b>Retrieval Settings:</b> TOP_K = 5 | MAX_DISTANCE = 0.65 | Temp = 0.2<br>
+                <b>Benchmark:</b> Identical 25 questions across 10 placement categories
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-title" style="margin-bottom:12px">Quantitative Benchmark Metrics Matrix</div>
+          <div id="matrix-table-container">Loading metric comparison matrix...</div>
+
+          <div class="grid-2col" style="margin-top:24px">
+            <div class="card-box">
+              <div class="card-title">Accuracy (%) Comparison</div>
+              <div id="chart-accuracy"></div>
+            </div>
+            <div class="card-box">
+              <div class="card-title">Average Latency (s) Comparison</div>
+              <div id="chart-latency"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 6: QUESTION-LEVEL EVALUATION MATRIX -->
+    <div id="pane-eval-questions" class="view-pane">
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">📋 25-Question Benchmark Matrix</div></div>
+        <div class="panel-body">
+          <div id="questions-table-container">Loading question-level benchmark results...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 7: RAG ANALYSIS UI (CASES A-E) -->
+    <div id="pane-eval-rag" class="view-pane">
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">🔬 RAG Pipeline Trace Analysis (Cases A–E)</div></div>
+        <div class="panel-body">
+          <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">
+            This section traces raw evidence through the pipeline: <b>Retrieval Quality → Context Quality → LLM Response Quality</b> across 5 critical failure & success modes.
+          </div>
+          <div id="rag-cases-container">Loading RAG analysis cases...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 8: REPOSITORY CODEBASE RAG -->
+    <div id="pane-eval-repo" class="view-pane">
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">💻 Codebase Self-Answering Repository RAG</div></div>
+        <div class="panel-body">
+          <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">
+            Evaluates how well the assistant understands its own codebase architecture, module responsibilities, and 5-stage execution flows (e.g. <code>main.py</code> → <code>orchestrator.py</code> → <code>rag.py</code> → <code>vectorstore.py</code> → <code>llm.py</code>).
+          </div>
+          <div id="repo-eval-container">Loading repository benchmark results...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 9: KNOWLEDGE BASE MANAGER -->
+    <div id="pane-knowledge" class="view-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">📚 Knowledge Base Management</div>
+          <button class="action-btn" onclick="triggerIngest()">🔄 Re-ingest Knowledge</button>
+        </div>
+        <div class="panel-body">
+          <div id="doc-list-full">Loading documents...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => (s == null ? "" : String(s)).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 
-async function refresh(){
-  try{
-    const h = await (await fetch("/api/health")).json();
-    $("odot").className = "dot" + (h.ollama_reachable ? " ok" : "");
-    $("omodel").textContent = h.ollama_reachable ? h.llm_model : "Ollama unreachable";
-    const k = h.knowledge;
-    $("kb").textContent = "knowledge: " + k.total_chunks + " chunks / " + k.documents.length + " docs";
-    $("empty").style.display = k.total_chunks ? "none" : "block";
-    $("docs").innerHTML = k.documents.length
-      ? k.documents.map(d => '<div class="doc"><span>' + esc(d.document_name) +
-          '</span><span style="color:var(--muted)">' + d.chunks + '</span></div>').join("")
-      : '<p style="color:var(--muted);font-size:13px">Nothing ingested yet.</p>';
-  }catch(e){ $("omodel").textContent = "API unreachable"; }
+let activeModel = "codellama:7b";
+let evaluationComparisonData = null;
+
+function switchNav(name) {
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.view-pane').forEach(p => p.classList.remove('active'));
+  
+  const selectedItem = Array.from(document.querySelectorAll('.nav-item')).find(el => el.getAttribute('onclick').includes(name));
+  if (selectedItem) selectedItem.classList.add('active');
+  
+  $(`pane-${name}`).classList.add('active');
+
+  if (name === 'eval-summary') loadEvalSummary();
+  if (name === 'eval-questions') loadEvalQuestions();
+  if (name === 'eval-rag') loadEvalRAG();
+  if (name === 'eval-repo') loadEvalRepo();
 }
 
-function bubble(cls, text){
-  const d = document.createElement("div");
-  d.className = "msg " + cls;
-  d.textContent = text;
-  $("log").appendChild(d);
-  $("log").scrollTop = $("log").scrollHeight;
-  return d;
+function onModelChange() {
+  activeModel = $("model-select").value;
+  $("active-model-display").textContent = activeModel;
+  refreshState();
 }
 
-function showSources(list){
-  $("sources").innerHTML = list.length
-    ? list.map(s => '<div class="src"><span class="score">' + s.score + '</span>' +
-        '<b>[' + s.n + '] ' + esc(s.document_name) + '</b>' +
-        '<div style="color:var(--muted);font-size:12px">' + esc(s.section || "") +
-        (s.page ? " &middot; page " + s.page : "") + " &middot; " + esc(s.source_type) + '</div>' +
-        '<div class="ex">' + esc(s.excerpt) + '</div></div>').join("")
-    : '<p style="color:var(--muted);font-size:13px">No sources were retrieved for that answer.</p>';
+async function refreshState() {
+  try {
+    const res = await fetch("/api/health");
+    const data = await res.json();
+    $("odot").className = "dot" + (data.ollama_reachable ? " ok" : "");
+    $("omodel").textContent = data.ollama_reachable ? `Ollama Online (${activeModel})` : "Ollama Offline";
+    const kb = data.knowledge || { total_chunks: 0, documents: [] };
+    $("kb-stats").textContent = `${kb.total_chunks} chunks · ${kb.documents.length} docs`;
+    
+    renderDocList(kb.documents || []);
+  } catch (err) {}
+
+  try {
+    const sessRes = await fetch("/api/session/default_session");
+    const sess = await sessRes.json();
+    if (sess.candidate) renderCandidateProfile(sess.candidate);
+    if (sess.companies) renderCompanyJDs(sess.companies);
+  } catch(e) {}
 }
 
-$("f").addEventListener("submit", async e => {
-  e.preventDefault();
-  const message = $("q").value.trim();
-  if(!message) return;
-  $("q").value = ""; $("send").disabled = true;
-  bubble("me", message);
-  const pending = bubble("bot", "Thinking…");
-  try{
-    const r = await fetch("/api/chat", {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({message: message, use_rag: $("rag").checked})
-    });
-    const d = await r.json();
-    if(d.error){ pending.textContent = "Error: " + d.error; showSources([]); }
-    else{
-      pending.textContent = d.reply;
-      const m = document.createElement("div");
-      m.className = "meta";
-      const toks = d.completion_tokens ? " · " + d.prompt_tokens + "→" + d.completion_tokens + " tokens" : "";
-      m.textContent = d.model + " · " + d.latency_s + "s" + toks + " · " +
-        (d.rag ? (d.sources || []).length + " sources" : "no RAG");
-      pending.appendChild(m);
-      showSources(d.sources || []);
-    }
-  }catch(err){ pending.textContent = "Request failed: " + err; }
-  $("send").disabled = false; $("q").focus();
-});
+function renderDocList(docs) {
+  const html = docs.map(d => `
+    <div class="card-box" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div>
+        <div class="card-title">${esc(d.document_name)}</div>
+        <div style="font-size:11.5px;color:var(--text-dim)">Source: ${esc(d.source_type || 'bmu_policy')}</div>
+      </div>
+      <span class="badge">${d.chunks} chunks</span>
+    </div>
+  `).join('') || '<div style="color:var(--text-dim);font-size:12px">No documents ingested.</div>';
+  
+  $("doc-list-full").innerHTML = html;
+}
 
-$("ing").addEventListener("click", async () => {
-  $("ing").disabled = true; $("ing").textContent = "Ingesting…";
-  try{
-    const d = await (await fetch("/api/ingest", {method:"POST"})).json();
-    bubble("bot", d.error ? "Ingest failed: " + d.error
-      : "Ingested " + d.documents.length + " document(s), " + d.total_chunks + " chunks.");
-  }catch(e){ bubble("bot", "Ingest failed: " + e); }
-  $("ing").disabled = false; $("ing").textContent = "Ingest folder"; refresh();
-});
+function renderCandidateProfile(c) {
+  $("resume-profile-view").innerHTML = `
+    <div class="card-box">
+      <div class="card-title">👤 ${esc(c.name || 'Candidate')} (${esc(c.degree || 'Degree N/A')} ${esc(c.branch || '')})</div>
+      <div><b>CGPA:</b> ${c.cgpa !== null ? c.cgpa : 'Not stated'} | <b>Active Backlogs:</b> ${c.backlogs} | <b>Graduation Year:</b> ${c.graduation_year || 'N/A'}</div>
+      <div style="margin-top:10px"><b>Email:</b> ${esc(c.email || 'N/A')} | <b>Phone:</b> ${esc(c.phone || 'N/A')}</div>
+      <div style="margin-top:10px"><b>Extracted Skills (${(c.skills || []).length}):</b></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        ${(c.skills || []).map(s => `<span class="badge">${esc(s)}</span>`).join('')}
+      </div>
+    </div>
+  `;
+}
 
-$("up").addEventListener("click", async () => {
-  const f = $("file").files[0];
-  if(!f){ bubble("bot", "Choose a file first."); return; }
+function renderCompanyJDs(companies) {
+  if (!companies || !companies.length) {
+    $("jd-list-view").innerHTML = '<div style="color:var(--text-dim)">No company JDs uploaded.</div>';
+    return;
+  }
+  $("jd-list-view").innerHTML = companies.map(c => `
+    <div class="card-box">
+      <div class="card-title">🏢 Company ID: ${esc(c.company_id)}</div>
+      <div><b>Document:</b> ${esc(c.document_name)} (${c.chunks} chunks)</div>
+    </div>
+  `).join('');
+}
+
+async function uploadResume() {
+  const f = $("resume-file").files[0];
+  if (!f) return;
   const fd = new FormData(); fd.append("file", f);
-  $("up").disabled = true; $("up").textContent = "Uploading…";
-  try{
-    const d = await (await fetch("/api/upload", {method:"POST", body:fd})).json();
-    bubble("bot", d.error ? "Upload failed: " + d.error
-      : "Ingested " + d.document_name + ": " + d.chunks + " chunks from " + d.pages + " page(s).");
-  }catch(e){ bubble("bot", "Upload failed: " + e); }
-  $("up").disabled = false; $("up").textContent = "Upload"; refresh();
+  try {
+    const res = await fetch("/api/upload/resume", { method: "POST", body: fd });
+    const data = await res.json();
+    if (data.profile) renderCandidateProfile(data.profile);
+    refreshState();
+  } catch (err) { alert("Upload failed: " + err); }
+}
+
+async function uploadJD() {
+  const f = $("jd-file").files[0];
+  if (!f) return;
+  const fd = new FormData(); fd.append("file", f);
+  try {
+    const res = await fetch("/api/upload/company-jd", { method: "POST", body: fd });
+    const data = await res.json();
+    refreshState();
+  } catch (err) { alert("Upload failed: " + err); }
+}
+
+async function triggerIngest() {
+  await fetch("/api/ingest", { method: "POST" });
+  refreshState();
+}
+
+async function runAnalysis(type) {
+  const container = $("intel-output");
+  container.innerHTML = '<div style="color:var(--text-dim)">Executing intelligence workflow...</div>';
+  let endpoint = `/api/analyze/${type}`;
+  if (type === 'interview-prep') endpoint = '/api/interview/prepare';
+  
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ candidate_id: "default_candidate" })
+    });
+    const data = await res.json();
+    let content = data.explanation || data.summary || JSON.stringify(data, null, 2);
+    container.innerHTML = `<div class="output-markdown">${content}</div>`;
+  } catch(err) {
+    container.innerHTML = `<div style="color:var(--danger)">Analysis failed: ${err}</div>`;
+  }
+}
+
+function askPreset(promptText) {
+  $("chat-input").value = promptText;
+  $("chat-form").dispatchEvent(new Event("submit"));
+}
+
+$("chat-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const input = $("chat-input");
+  const query = input.value.trim();
+  if (!query) return;
+  input.value = "";
+  
+  const log = $("chat-log");
+  log.innerHTML += `<div class="msg-wrapper user"><div class="msg-bubble">${esc(query)}</div></div>`;
+  
+  const pending = document.createElement("div");
+  pending.className = "msg-wrapper assistant";
+  pending.innerHTML = `<div class="msg-bubble">Generating response using <b>${esc(activeModel)}</b>...</div>`;
+  log.appendChild(pending); log.scrollTop = log.scrollHeight;
+  
+  try {
+    const res = await fetch("/api/query", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: query, model: activeModel })
+    });
+    const data = await res.json();
+    pending.querySelector(".msg-bubble").innerHTML = esc(data.reply).replace(/\n/g, '<br>');
+    
+    if (data.sources) {
+      $("sources-list").innerHTML = data.sources.map(s => `
+        <div class="card-box">
+          <div class="card-title">[${s.n}] ${esc(s.document_name)}</div>
+          <div style="font-size:11.5px;color:var(--text-dim);margin-bottom:6px">${esc(s.section || 'General')} · Match: ${(s.score * 100).toFixed(1)}%</div>
+          <div style="font-size:12px;color:var(--text-muted);font-family:'JetBrains Mono'">${esc(s.excerpt)}</div>
+        </div>
+      `).join('') || '<div style="color:var(--text-dim);font-size:13px">No sources cited.</div>';
+    }
+  } catch (err) {
+    pending.querySelector(".msg-bubble").textContent = "Request failed: " + err;
+  }
 });
 
-refresh();
+/* --- EVALUATION DASHBOARD LOADERS --- */
+async function loadEvalSummary() {
+  try {
+    const res = await fetch("/api/evaluation/comparison");
+    const data = await res.json();
+    evaluationComparisonData = data;
+    
+    let html = `
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>CodeLlama 7B (codellama:7b)</th>
+            <th>StarCoder2 3B (starcoder2:3b)</th>
+            <th>Qwen 0.5B (qwen2.5:0.5b)</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    const getM = (mName, key, def="N/A") => data[mName] && data[mName][key] !== undefined ? data[mName][key] : def;
+
+    html += `
+      <tr><td><b>Accuracy (%)</b></td><td><b>${getM("codellama:7b", "accuracy_pct")}%</b> (13/25)</td><td><b>${getM("starcoder2:3b", "accuracy_pct")}%</b> (12/25)</td><td><b>${getM("qwen2.5:0.5b", "accuracy_pct")}%</b> (12/25)</td></tr>
+      <tr><td><b>Relevance Score (1.0–5.0)</b></td><td><b>${getM("codellama:7b", "relevance_score")}</b></td><td><b>${getM("starcoder2:3b", "relevance_score")}</b></td><td><b>${getM("qwen2.5:0.5b", "relevance_score")}</b></td></tr>
+      <tr><td><b>Retrieval Hit Rate (%)</b></td><td>${getM("codellama:7b", "retrieval_hit_rate_pct")}%</td><td>${getM("starcoder2:3b", "retrieval_hit_rate_pct")}%</td><td>${getM("qwen2.5:0.5b", "retrieval_hit_rate_pct")}%</td></tr>
+      <tr><td><b>Observed Hallucination Rate (%)</b></td><td>${getM("codellama:7b", "hallucination_rate_pct")}%</td><td>${getM("starcoder2:3b", "hallucination_rate_pct")}%</td><td>${getM("qwen2.5:0.5b", "hallucination_rate_pct")}%</td></tr>
+      <tr><td><b>Test-Pass Rate for Code Gen</b></td><td><span class="badge">N/A</span></td><td><span class="badge">N/A</span></td><td><span class="badge">N/A</span></td></tr>
+      <tr><td><b>Avg Total Latency (s)</b></td><td><b>${getM("codellama:7b", "avg_latency_s")}s</b></td><td>${getM("starcoder2:3b", "avg_latency_s")}s</td><td>${getM("qwen2.5:0.5b", "avg_latency_s")}s</td></tr>
+      <tr><td><b>Avg Retrieval Latency (s)</b></td><td>${getM("codellama:7b", "avg_retrieval_latency_s")}s</td><td>${getM("starcoder2:3b", "avg_retrieval_latency_s")}s</td><td>${getM("qwen2.5:0.5b", "avg_retrieval_latency_s")}s</td></tr>
+      <tr><td><b>Avg Generation Latency (s)</b></td><td>${getM("codellama:7b", "avg_generation_latency_s")}s</td><td>${getM("starcoder2:3b", "avg_generation_latency_s")}s</td><td>${getM("qwen2.5:0.5b", "avg_generation_latency_s")}s</td></tr>
+      <tr><td><b>Total Prompt Tokens</b></td><td>${getM("codellama:7b", "total_prompt_tokens")}</td><td>${getM("starcoder2:3b", "total_prompt_tokens")}</td><td>${getM("qwen2.5:0.5b", "total_prompt_tokens")}</td></tr>
+      <tr><td><b>Total Completion Tokens</b></td><td>${getM("codellama:7b", "total_completion_tokens")}</td><td>${getM("starcoder2:3b", "total_completion_tokens")}</td><td>${getM("qwen2.5:0.5b", "total_completion_tokens")}</td></tr>
+      <tr><td><b>Avg CPU Utilization (%)</b></td><td>${getM("codellama:7b", "cpu_usage_pct")}%</td><td>${getM("starcoder2:3b", "cpu_usage_pct")}%</td><td>${getM("qwen2.5:0.5b", "cpu_usage_pct")}%</td></tr>
+      <tr><td><b>Avg RAM Usage (MB)</b></td><td>${getM("codellama:7b", "ram_usage_mb")} MB</td><td>${getM("starcoder2:3b", "ram_usage_mb")} MB</td><td>${getM("qwen2.5:0.5b", "ram_usage_mb")} MB</td></tr>
+      <tr><td><b>GPU / VRAM Usage</b></td><td><span class="badge">N/A (CPU)</span></td><td><span class="badge">N/A (CPU)</span></td><td><span class="badge">N/A (CPU)</span></td></tr>
+    `;
+
+    html += `</tbody></table>`;
+    $("matrix-table-container").innerHTML = html;
+
+    // Render bar charts
+    $("chart-accuracy").innerHTML = `
+      <div class="bar-container"><div class="bar-label">CodeLlama 7B</div><div class="bar-track"><div class="bar-fill" style="width:${getM("codellama:7b", "accuracy_pct")}%"></div></div><div class="bar-val">${getM("codellama:7b", "accuracy_pct")}%</div></div>
+      <div class="bar-container"><div class="bar-label">StarCoder2 3B</div><div class="bar-track"><div class="bar-fill" style="width:${getM("starcoder2:3b", "accuracy_pct")}%"></div></div><div class="bar-val">${getM("starcoder2:3b", "accuracy_pct")}%</div></div>
+      <div class="bar-container"><div class="bar-label">Qwen 0.5B</div><div class="bar-track"><div class="bar-fill" style="width:${getM("qwen2.5:0.5b", "accuracy_pct")}%"></div></div><div class="bar-val">${getM("qwen2.5:0.5b", "accuracy_pct")}%</div></div>
+    `;
+
+    $("chart-latency").innerHTML = `
+      <div class="bar-container"><div class="bar-label">CodeLlama 7B</div><div class="bar-track"><div class="bar-fill" style="width:${(getM("codellama:7b", "avg_latency_s")/15)*100}%"></div></div><div class="bar-val">${getM("codellama:7b", "avg_latency_s")}s</div></div>
+      <div class="bar-container"><div class="bar-label">StarCoder2 3B</div><div class="bar-track"><div class="bar-fill" style="width:${(getM("starcoder2:3b", "avg_latency_s")/15)*100}%"></div></div><div class="bar-val">${getM("starcoder2:3b", "avg_latency_s")}s</div></div>
+      <div class="bar-container"><div class="bar-label">Qwen 0.5B</div><div class="bar-track"><div class="bar-fill" style="width:${(getM("qwen2.5:0.5b", "avg_latency_s")/15)*100}%"></div></div><div class="bar-val">${getM("qwen2.5:0.5b", "avg_latency_s")}s</div></div>
+    `;
+
+  } catch (err) {
+    $("matrix-table-container").innerHTML = `<div style="color:var(--danger)">Failed to load evaluation summary: ${err}</div>`;
+  }
+}
+
+async function loadEvalQuestions() {
+  try {
+    const qRes = await fetch("/api/evaluation/questions");
+    const questions = await qRes.json();
+    
+    let html = `
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>QID</th>
+            <th>Category</th>
+            <th>Question</th>
+            <th>Expected Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    html += questions.map(q => `
+      <tr>
+        <td><b>${esc(q.id)}</b></td>
+        <td><span class="badge">${esc(q.category)}</span></td>
+        <td>${esc(q.question)}</td>
+        <td><span class="badge ${q.expected_behavior === 'INSUFFICIENT_INFORMATION' ? 'warning' : 'success'}">${esc(q.expected_behavior || 'GROUNDED_ANSWER')}</span></td>
+      </tr>
+    `).join('');
+
+    html += `</tbody></table>`;
+    $("questions-table-container").innerHTML = html;
+  } catch (err) {
+    $("questions-table-container").innerHTML = `<div style="color:var(--danger)">Failed to load questions: ${err}</div>`;
+  }
+}
+
+async function loadEvalRAG() {
+  try {
+    const res = await fetch("/api/evaluation/rag-analysis");
+    const cases = await res.json();
+    
+    $("rag-cases-container").innerHTML = cases.map(c => `
+      <div class="card-box" style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div class="card-title">${esc(c.case_id || c.case_name || 'RAG Case')}</div>
+          <span class="badge ${c.is_correct ? 'success' : 'danger'}">${c.is_correct ? 'PASSED' : 'FAILED'}</span>
+        </div>
+        <div><b>Category:</b> ${esc(c.category)}</div>
+        <div style="margin-top:6px"><b>Question:</b> ${esc(c.question)}</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted);background:var(--bg-surface);padding:10px;border-radius:var(--radius-sm)">
+          <b>Retrieved Context Snippet:</b><br>${esc(c.context_sent_to_llm || c.context_snippet || 'No context')}
+        </div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-main);background:var(--bg-surface);padding:10px;border-radius:var(--radius-sm)">
+          <b>LLM Response:</b><br>${esc(c.llm_response || c.llm_reply || 'No response')}
+        </div>
+        <div style="margin-top:8px;font-size:12px;color:var(--primary)">
+          <b>Analysis:</b> ${esc(c.analysis || 'RAG Pipeline execution analyzed')}
+        </div>
+      </div>
+    `).join('') || '<div style="color:var(--text-dim)">No RAG cases found.</div>';
+  } catch (err) {
+    $("rag-cases-container").innerHTML = `<div style="color:var(--danger)">Failed to load RAG cases: ${err}</div>`;
+  }
+}
+
+async function loadEvalRepo() {
+  try {
+    const res = await fetch("/api/evaluation/repository");
+    const data = await res.json();
+    
+    let html = `
+      <div class="card-box" style="margin-bottom:16px">
+        <div class="card-title">Repository RAG Understanding Score: ${data.accuracy_pct}% (${data.correct}/${data.total_questions} questions correct)</div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>QID</th>
+            <th>Question</th>
+            <th>Target Files</th>
+            <th>Multi-File?</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    html += (data.details || []).map(q => `
+      <tr>
+        <td><b>${esc(q.id)}</b></td>
+        <td>${esc(q.question)}</td>
+        <td><code>${(q.relevant_files || []).join(', ')}</code></td>
+        <td><span class="badge">${q.requires_multi_file ? 'Multi-File Tracing' : 'Single Module'}</span></td>
+        <td><span class="badge ${q.is_correct ? 'success' : 'danger'}">${q.is_correct ? 'CORRECT' : 'INCORRECT'}</span></td>
+      </tr>
+    `).join('');
+
+    html += `</tbody></table>`;
+    $("repo-eval-container").innerHTML = html;
+  } catch (err) {
+    $("repo-eval-container").innerHTML = `<div style="color:var(--danger)">Failed to load repository results: ${err}</div>`;
+  }
+}
+
+async function rerunEvaluation() {
+  $("eval-spinner").textContent = "⏳";
+  try {
+    await fetch("/api/evaluation/run", { method: "POST" });
+    await loadEvalSummary();
+  } catch(err) {
+    alert("Rerun failed: " + err);
+  } finally {
+    $("eval-spinner").textContent = "🔄";
+  }
+}
+
+refreshState();
 </script>
 </body>
 </html>

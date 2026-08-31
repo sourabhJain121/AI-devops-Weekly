@@ -1,0 +1,72 @@
+[
+  {
+    "id": "REPO_001",
+    "question": "Which file handles document text extraction?",
+    "relevant_files": ["app/documents.py"],
+    "requires_multi_file": false,
+    "expected_answer": "app/documents.py is responsible for extracting page-by-page text from PDF, MD, and TXT files using PyPDF."
+  },
+  {
+    "id": "REPO_002",
+    "question": "Which component performs section-aware text chunking?",
+    "relevant_files": ["app/chunking.py"],
+    "requires_multi_file": false,
+    "expected_answer": "app/chunking.py performs section-aware heading-bounded text chunking."
+  },
+  {
+    "id": "REPO_003",
+    "question": "Where is the Ollama LLM called in the codebase?",
+    "relevant_files": ["app/llm.py"],
+    "requires_multi_file": false,
+    "expected_answer": "app/llm.py sends requests to Ollama API endpoints (/api/embed and /api/chat)."
+  },
+  {
+    "id": "REPO_004",
+    "question": "What happens after a user submits a query to FastAPI?",
+    "relevant_files": ["app/main.py", "app/orchestrator.py"],
+    "requires_multi_file": true,
+    "expected_answer": "app/main.py receives the query at /api/query and forwards it to orchestrator.route_and_execute."
+  },
+  {
+    "id": "REPO_005",
+    "question": "Which modules participate in the RAG pipeline?",
+    "relevant_files": ["app/rag.py", "app/vectorstore.py", "app/llm.py", "app/chunking.py"],
+    "requires_multi_file": true,
+    "expected_answer": "app/rag.py orchestrates retrieval via vectorstore.py, context formatting, and generation via llm.py."
+  },
+  {
+    "id": "REPO_006",
+    "question": "Where is company metadata isolation implemented?",
+    "relevant_files": ["app/vectorstore.py", "app/services/jd.py"],
+    "requires_multi_file": true,
+    "expected_answer": "app/vectorstore.py enforces metadata filtering using company_id, and app/services/jd.py tags company chunks during ingestion."
+  },
+  {
+    "id": "REPO_007",
+    "question": "Where is candidate information stored and managed?",
+    "relevant_files": ["app/services/resume.py", "app/vectorstore.py"],
+    "requires_multi_file": true,
+    "expected_answer": "app/services/resume.py parses resumes, extracts candidate profile entities, and indexes chunks with candidate_id."
+  },
+  {
+    "id": "REPO_008",
+    "question": "Where is eligibility calculated?",
+    "relevant_files": ["app/services/eligibility.py"],
+    "requires_multi_file": false,
+    "expected_answer": "app/services/eligibility.py deterministically evaluates candidate CGPA and backlogs against policy thresholds."
+  },
+  {
+    "id": "REPO_009",
+    "question": "Which component performs resume vs JD skill matching?",
+    "relevant_files": ["app/services/matching.py"],
+    "requires_multi_file": false,
+    "expected_answer": "app/services/matching.py calculates skill match score percentages and lists matching/missing skills."
+  },
+  {
+    "id": "REPO_010",
+    "question": "What happens from the moment a user submits /api/query until the final answer is returned?",
+    "relevant_files": ["app/main.py", "app/orchestrator.py", "app/rag.py", "app/vectorstore.py", "app/llm.py"],
+    "requires_multi_file": true,
+    "expected_answer": "Request enters app/main.py, orchestrator.py classifies intent, routes to service or rag.py, queries ChromaDB via vectorstore.py, builds context, and invokes llm.py."
+  }
+]

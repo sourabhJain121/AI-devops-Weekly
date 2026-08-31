@@ -1,0 +1,327 @@
+[
+  {
+    "id": "Q001",
+    "category": "BMU_POLICY",
+    "question": "What is the minimum CGPA requirement for BMU placement participation?",
+    "expected_answer": "6.5 CGPA on a 10-point scale",
+    "expected_keyword": "6.5",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["Minimum CGPA requirement is 6.5"],
+      "rules": ["CGPA >= 6.5 required for placement registration"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q002",
+    "category": "BMU_POLICY",
+    "question": "How many active backlogs are allowed for campus placement drives?",
+    "expected_answer": "Maximum 2 active backlogs allowed",
+    "expected_keyword": "two",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["No more than 2 active backlogs allowed"],
+      "rules": ["Active backlogs <= 2"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q003",
+    "category": "BMU_POLICY",
+    "question": "What is the minimum attendance percentage required in the current semester?",
+    "expected_answer": "75% attendance required",
+    "expected_keyword": "75%",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["75% attendance mandatory"],
+      "rules": ["Attendance >= 75%"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q004",
+    "category": "BMU_POLICY",
+    "question": "What happens if a student accepts a pre-placement offer (PPO)?",
+    "expected_answer": "Student becomes ineligible for further placement drives",
+    "expected_keyword": "not eligible",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["PPO acceptance disables further placement eligibility"],
+      "rules": ["One student one job policy"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q005",
+    "category": "BMU_POLICY",
+    "question": "What documents must be submitted to the Placement Office before registration?",
+    "expected_answer": "Resume in PDF format and consolidated marksheet",
+    "expected_keyword": "resume",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["Resume PDF and marksheet required"],
+      "rules": ["Registration submission mandatory"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q006",
+    "category": "COMPANY_JD",
+    "question": "What skills does the target software developer role require?",
+    "expected_answer": "Python, FastAPI, Docker, and REST APIs",
+    "expected_keyword": "Python",
+    "required_sources": ["company_jd"],
+    "ground_truth": {
+      "facts": ["Python and FastAPI required"],
+      "rules": ["Required skills extraction"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q007",
+    "category": "COMPANY_JD",
+    "question": "What is the role title described in the uploaded Job Description?",
+    "expected_answer": "Software Developer / Engineer",
+    "expected_keyword": "Software",
+    "required_sources": ["company_jd"],
+    "ground_truth": {
+      "facts": ["Role title is Software Developer"],
+      "rules": ["Role title extraction"]
+    },
+    "expected_behavior": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "Q008",
+    "category": "ELIGIBILITY",
+    "question": "Am I eligible to apply for campus placement drives?",
+    "expected_answer": "Evaluation based on candidate CGPA >= 6.5 and backlogs <= 2",
+    "expected_keyword": "Eligible",
+    "required_sources": ["bmu_policy", "resume"],
+    "ground_truth": {
+      "facts": ["CGPA and backlogs check against policy"],
+      "rules": ["Deterministic eligibility evaluation"]
+    },
+    "expected_behavior": "DETERMINISTIC_EVAL"
+  },
+  {
+    "id": "Q009",
+    "category": "ELIGIBILITY",
+    "question": "Can a student with 3 active backlogs apply for placement drives?",
+    "expected_answer": "No, Not Eligible because active backlogs exceed maximum limit of 2",
+    "expected_keyword": "Not Eligible",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["3 backlogs > 2 allowed"],
+      "rules": ["Not Eligible status"]
+    },
+    "expected_behavior": "DETERMINISTIC_EVAL"
+  },
+  {
+    "id": "Q010",
+    "category": "ELIGIBILITY",
+    "question": "Is a candidate with a 6.0 CGPA eligible for placement?",
+    "expected_answer": "No, Not Eligible because 6.0 CGPA is below the 6.5 cut-off",
+    "expected_keyword": "Not Eligible",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["6.0 CGPA < 6.5 threshold"],
+      "rules": ["Not Eligible status"]
+    },
+    "expected_behavior": "DETERMINISTIC_EVAL"
+  },
+  {
+    "id": "Q011",
+    "category": "RESUME_MATCH",
+    "question": "Does my resume match the company JD requirements?",
+    "expected_answer": "Structured match score percentage with matching and missing skills list",
+    "expected_keyword": "Match Score",
+    "required_sources": ["resume", "company_jd"],
+    "ground_truth": {
+      "facts": ["Compare candidate skills vs JD required skills"],
+      "rules": ["Match percentage calculation"]
+    },
+    "expected_behavior": "STRUCTURED_ANALYSIS"
+  },
+  {
+    "id": "Q012",
+    "category": "RESUME_MATCH",
+    "question": "Which skills in my resume match the JD?",
+    "expected_answer": "List of overlapping technical skills",
+    "expected_keyword": "Matching Skills",
+    "required_sources": ["resume", "company_jd"],
+    "ground_truth": {
+      "facts": ["Intersect skills set"],
+      "rules": ["Matching skills list"]
+    },
+    "expected_behavior": "STRUCTURED_ANALYSIS"
+  },
+  {
+    "id": "Q013",
+    "category": "SKILL_GAP",
+    "question": "What skills am I missing for this role?",
+    "expected_answer": "List of required JD skills missing from candidate resume",
+    "expected_keyword": "Missing",
+    "required_sources": ["resume", "company_jd"],
+    "ground_truth": {
+      "facts": ["Set difference (JD skills - Resume skills)"],
+      "rules": ["Missing skills list"]
+    },
+    "expected_behavior": "STRUCTURED_ANALYSIS"
+  },
+  {
+    "id": "Q014",
+    "category": "SKILL_GAP",
+    "question": "What are my high priority preparation skill gaps?",
+    "expected_answer": "Prioritized skill breakdown table (High, Medium, Low priority)",
+    "expected_keyword": "Priority",
+    "required_sources": ["resume", "company_jd"],
+    "ground_truth": {
+      "facts": ["Categorized missing skills"],
+      "rules": ["Prioritized breakdown table"]
+    },
+    "expected_behavior": "STRUCTURED_ANALYSIS"
+  },
+  {
+    "id": "Q015",
+    "category": "RESUME_IMPROVEMENT",
+    "question": "How should I improve my resume for this application?",
+    "expected_answer": "Evidence-based recommendations without experience fabrication",
+    "expected_keyword": "recommendations",
+    "required_sources": ["resume", "company_jd"],
+    "ground_truth": {
+      "facts": ["Actionable resume suggestions"],
+      "rules": ["No experience fabrication"]
+    },
+    "expected_behavior": "GROUNDED_SUGGESTION"
+  },
+  {
+    "id": "Q016",
+    "category": "RESUME_IMPROVEMENT",
+    "question": "What keywords should I emphasize in my resume?",
+    "expected_keyword": "highlight",
+    "expected_answer": "Key domain keywords from target JD to highlight",
+    "required_sources": ["company_jd"],
+    "ground_truth": {
+      "facts": ["Target JD technical keywords"],
+      "rules": ["Keyword optimization advice"]
+    },
+    "expected_behavior": "GROUNDED_SUGGESTION"
+  },
+  {
+    "id": "Q017",
+    "category": "INTERVIEW_PREPARATION",
+    "question": "What technical questions should I prepare for the interview?",
+    "expected_answer": "Role and candidate-tailored technical interview questions",
+    "expected_keyword": "Question",
+    "required_sources": ["company_jd", "resume"],
+    "ground_truth": {
+      "facts": ["Technical domain questions"],
+      "rules": ["Tailored prep questions"]
+    },
+    "expected_behavior": "GROUNDED_GENERATION"
+  },
+  {
+    "id": "Q018",
+    "category": "INTERVIEW_PREPARATION",
+    "question": "What scenario or coding questions will be asked in the interview?",
+    "expected_answer": "Coding and system scenario questions tailored to role",
+    "expected_keyword": "Scenario",
+    "required_sources": ["company_jd"],
+    "ground_truth": {
+      "facts": ["Scenario and coding questions"],
+      "rules": ["Tailored prep questions"]
+    },
+    "expected_behavior": "GROUNDED_GENERATION"
+  },
+  {
+    "id": "Q019",
+    "category": "INSUFFICIENT_INFO",
+    "question": "What is the exact stipend amount for the 2030 summer internship?",
+    "expected_answer": "Insufficient information in provided documents",
+    "expected_keyword": "insufficient",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["Stipend for 2030 is not present"],
+      "rules": ["Must return insufficient information warning"]
+    },
+    "expected_behavior": "INSUFFICIENT_INFORMATION"
+  },
+  {
+    "id": "Q020",
+    "category": "INSUFFICIENT_INFO",
+    "question": "What is the name of the Vice Chancellor's secret placement discount code?",
+    "expected_answer": "Insufficient information in provided documents",
+    "expected_keyword": "insufficient",
+    "required_sources": ["bmu_policy"],
+    "ground_truth": {
+      "facts": ["No secret discount code exists in policy"],
+      "rules": ["Must return insufficient information warning"]
+    },
+    "expected_behavior": "INSUFFICIENT_INFORMATION"
+  },
+  {
+    "id": "Q021",
+    "category": "REPO_RAG",
+    "question": "Which service file handles document text extraction?",
+    "expected_answer": "app/documents.py",
+    "expected_keyword": "documents.py",
+    "required_sources": ["repository_code"],
+    "ground_truth": {
+      "facts": ["app/documents.py extracts text from PDF/TXT/MD"],
+      "rules": ["Repo self-answering RAG"]
+    },
+    "expected_behavior": "REPO_MAP_ANSWER"
+  },
+  {
+    "id": "Q022",
+    "category": "REPO_RAG",
+    "question": "Where is Ollama called in the codebase?",
+    "expected_answer": "app/llm.py",
+    "expected_keyword": "llm.py",
+    "required_sources": ["repository_code"],
+    "ground_truth": {
+      "facts": ["app/llm.py sends requests to Ollama API"],
+      "rules": ["Repo self-answering RAG"]
+    },
+    "expected_behavior": "REPO_MAP_ANSWER"
+  },
+  {
+    "id": "Q023",
+    "category": "REPO_RAG",
+    "question": "Which file performs section-aware text chunking?",
+    "expected_answer": "app/chunking.py",
+    "expected_keyword": "chunking.py",
+    "required_sources": ["repository_code"],
+    "ground_truth": {
+      "facts": ["app/chunking.py splits text on section headings"],
+      "rules": ["Repo self-answering RAG"]
+    },
+    "expected_behavior": "REPO_MAP_ANSWER"
+  },
+  {
+    "id": "Q024",
+    "category": "REPO_RAG",
+    "question": "What happens after a user submits a query to FastAPI?",
+    "expected_answer": "Query is received by app/main.py and routed via app/orchestrator.py",
+    "expected_keyword": "orchestrator",
+    "required_sources": ["repository_code"],
+    "ground_truth": {
+      "facts": ["FastAPI endpoint calls orchestrator.route_and_execute"],
+      "rules": ["Repo self-answering RAG"]
+    },
+    "expected_behavior": "REPO_MAP_ANSWER"
+  },
+  {
+    "id": "Q025",
+    "category": "REPO_RAG",
+    "question": "Which file manages ChromaDB collection storage?",
+    "expected_answer": "app/vectorstore.py",
+    "expected_keyword": "vectorstore.py",
+    "required_sources": ["repository_code"],
+    "ground_truth": {
+      "facts": ["app/vectorstore.py manages Chroma collection, embeddings, and querying"],
+      "rules": ["Repo self-answering RAG"]
+    },
+    "expected_behavior": "REPO_MAP_ANSWER"
+  }
+]
