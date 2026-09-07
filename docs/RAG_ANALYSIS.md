@@ -29,6 +29,8 @@ EVALUATION
   - **LLM Output**: *"The minimum CGPA requirement for BMU placement participation is 6.5 on a 10-point scale. [1] SAMPLE_placement_policy.md"*
   - **Evaluation**: **CORRECT** | Relevance: 5.0 | Grounded: True
 
+---
+
 ### Case B — Irrelevant Retrieval
 - **Definition**: Chunks retrieved have low semantic similarity or relate to a different section.
 - **Example Trace (Q021 - Repo RAG)**:
@@ -37,6 +39,8 @@ EVALUATION
   - **LLM Output**: Generates document title rather than python file basename (`app/documents.py`).
   - **Evaluation**: **INCORRECT** | Relevance: 2.0 | Actionable Fix: Add repository codebase embeddings to vector store.
 
+---
+
 ### Case C — Missed Information (Retrieval Gap)
 - **Definition**: Required information exists in knowledge base but fell outside top_k or distance threshold (`0.65`).
 - **Example Trace (Q011 - Resume Match)**:
@@ -44,6 +48,8 @@ EVALUATION
   - **Root Cause**: Candidate resume not uploaded prior to query execution.
   - **LLM Output**: *"Please upload a candidate resume first to compare against the Job Description."*
   - **Evaluation**: Expected behavior handled cleanly by system intent router.
+
+---
 
 ### Case E — Correct Retrieval + Hallucinated Generation
 - **Definition**: Correct chunks retrieved, but LLM ignores context constraints and fabricates unsupported details.

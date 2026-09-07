@@ -10,6 +10,9 @@ services:
       - LLM_MODEL=codellama:7b
       - EMBED_MODEL=nomic-embed-text
       - CHROMA_DIR=/app/storage/chroma
+      - WEB_SEARCH_PROVIDER=duckduckgo
+      - WEB_SEARCH_TIMEOUT=10
+      - WEB_SEARCH_MAX_RESULTS=5
     volumes:
       - ./knowledge:/app/knowledge
       - ./storage:/app/storage
@@ -25,3 +28,4 @@ services:
 
 volumes:
   ollama_data:
+

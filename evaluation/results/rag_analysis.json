@@ -1,467 +1,5 @@
 [
   {
-    "model": "codellama:7b",
-    "question_id": "Q001",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What is the minimum CGPA requirement for BMU placement participation?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum CGPA requirement for BMU placement participation is 6.5 on a 10-point scale. This requirement is stated in the BMU placement policy document, specifically in the \"Eligibility for Placement...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q002",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "How many active backlogs are allowed for campus placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "According to the provided documents, a student is not permitted to sit for any placement drive until their backlogs are cleared. The backlogs are considered cleared from the date the result is publish...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q003",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What is the minimum attendance percentage required in the current semester?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum attendance percentage required in the current semester is 75%....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q004",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What happens if a student accepts a pre-placement offer (PPO)?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 5. Placement Restrictions (page 1)\n## 5. Placement Restrictions\n\nStudents who have already accepted a pre-placement offer arising from an internship are\nnot eligible f...",
-    "llm_reply": "If a student accepts a pre-placement offer (PPO), they are not eligible for further placement drives in the same academic year, except where the Placement Office grants written permission. This is sta...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q005",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What documents must be submitted to the Placement Office before registration?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 4. Documents Required (page 1)\n## 4. Documents Required\n\nStudents must submit the following to the Placement Office before registration:\n\n- Updated resume in PDF forma...",
-    "llm_reply": "Students must submit the following documents to the Placement Office before registration:\n\n* Updated resume in PDF format\n* Consolidated marksheet of all completed semesters\n* Government-issued photo ...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q006",
-    "category": "COMPANY_JD",
-    "case_type": "Case C (Missed Information)",
-    "question": "What skills does the target software developer role require?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "The target software developer role requires strong analytical skills, problem-solving abilities, and strong verbal and written communication skills. Additionally, the candidate should have a self-star...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q007",
-    "category": "COMPANY_JD",
-    "case_type": "Case C (Missed Information)",
-    "question": "What is the role title described in the uploaded Job Description?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
-    "llm_reply": "The role title described in the uploaded Job Description is \"Software Engineer\"....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q008",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Am I eligible to apply for campus placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "**Eligibility Result: Unable to Determine**\n\nBased on the provided context, the candidate's eligibility status for the BMU placement drive is \"Unable to Determine\" due to the lack of information provi...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q009",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Can a student with 3 active backlogs apply for placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "No, a student with 3 active backlogs is not eligible to apply for placement drives. According to the Backlog Rules, a student carrying more than two active backlogs is not permitted to sit for any pla...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q010",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Is a candidate with a 6.0 CGPA eligible for placement?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "**Eligibility Result: Unable to Determine**\n\nEligibility Status: Unable to Determine\n\nReason: Candidate resume does not state CGPA or is not uploaded.\n\nEligibility Breakdown:\n\n* CGPA: N/A\n* Backlog St...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q011",
-    "category": "RESUME_MATCH",
-    "case_type": "Case C (Missed Information)",
-    "question": "Does my resume match the company JD requirements?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
-    "llm_reply": "Please upload a candidate resume first to compare against the Job Description....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q012",
-    "category": "RESUME_MATCH",
-    "case_type": "Case C (Missed Information)",
-    "question": "Which skills in my resume match the JD?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Please upload a candidate resume first to compare against the Job Description....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q013",
-    "category": "SKILL_GAP",
-    "case_type": "Case C (Missed Information)",
-    "question": "What skills am I missing for this role?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q014",
-    "category": "SKILL_GAP",
-    "case_type": "Case C (Missed Information)",
-    "question": "What are my high priority preparation skill gaps?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q015",
-    "category": "RESUME_IMPROVEMENT",
-    "case_type": "Case C (Missed Information)",
-    "question": "How should I improve my resume for this application?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 4. Documents Required (page 1)\n## 4. Documents Required\n\nStudents must submit the following to the Placement Office before registration:\n\n- Updated resume in PDF forma...",
-    "llm_reply": "Please upload both candidate resume and company JD to generate targeted resume improvements....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q016",
-    "category": "RESUME_IMPROVEMENT",
-    "case_type": "Case C (Missed Information)",
-    "question": "What keywords should I emphasize in my resume?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Based on the provided documents, it is recommended to emphasize the following keywords in your resume:\n\n* Strong analytical skills\n* Strong problem-solving abilities\n* Strong verbal and written commun...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q017",
-    "category": "INTERVIEW_PREPARATION",
-    "case_type": "Case C (Missed Information)",
-    "question": "What technical questions should I prepare for the interview?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "As a BMU Placement Assistant, I would recommend preparing questions related to the job role, the company, and the industry in general. Here are some examples of technical questions you could ask:\n\n1. ...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q019",
-    "category": "INSUFFICIENT_INFO",
-    "case_type": "Case E (Hallucinated Generation)",
-    "question": "What is the exact stipend amount for the 2030 summer internship?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 3)\nEmployment Package \nInternship Stipend- INR 27,500 per month for the Internship Duration. \n\u25cf First-Year Bonus : The bonus wil...",
-    "llm_reply": "The exact stipend amount for the 2030 summer internship is INR 27,500 per month....",
-    "is_correct": false
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q020",
-    "category": "INSUFFICIENT_INFO",
-    "case_type": "Case E (Hallucinated Generation)",
-    "question": "What is the name of the Vice Chancellor's secret placement discount code?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 3. Application Rules (page 1)\n## 3. Application Rules\n\n- A student may hold only one active offer at a time.\n- After accepting an offer, the student is withdrawn from ...",
-    "llm_reply": "I could not find sufficient information in the provided documents to answer this reliably. The document \"SAMPLE \u2014 NOT A REAL BMU DOCUMENT\" does not contain any information about the Vice Chancellor's ...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q021",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Which service file handles document text extraction?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > SAMPLE \u2014 NOT A REAL BMU DOCUMENT (page 1)\n# SAMPLE \u2014 NOT A REAL BMU DOCUMENT\n\n> Every rule, number and date below is **invented placeholder content** created only\n> to...",
-    "llm_reply": "The service file that handles document text extraction is [3] SAMPLE_placement_policy.md > 4. Documents Required (page 1)....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q022",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Where is Ollama called in the codebase?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] sourabhJain_BMU.pdf (page 1)\nn, IntelliJ IDEA CE\nConcepts:Data Structures & Algorithms, REST APIs, API Testing, Test Automation, Feature Engineering, Regex\nValidation\nExperience\nAirtel Payments Ba...",
-    "llm_reply": "Ollama is called in the `app/llm.py` file. The `llm.py` file is responsible for generating embeddings via the `/api/embed` endpoint and executing LLM generation via the `/api/chat` endpoint. The `llm....",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q023",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Which file performs section-aware text chunking?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > SAMPLE \u2014 NOT A REAL BMU DOCUMENT (page 1)\n# SAMPLE \u2014 NOT A REAL BMU DOCUMENT\n\n> Every rule, number and date below is **invented placeholder content** created only\n> to...",
-    "llm_reply": "The file that performs section-aware text chunking is `app/chunking.py`. The `app/chunking.py` module contains the `Section-aware heading-bounded text chunker` functionality, which ensures that chunks...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q024",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "What happens after a user submits a query to FastAPI?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 3. Application Rules (page 1)\n## 3. Application Rules\n\n- A student may hold only one active offer at a time.\n- After accepting an offer, the student is withdrawn from ...",
-    "llm_reply": "After a user submits a query to FastAPI, the query is processed by the FastAPI framework and the appropriate endpoint is called. The endpoint is responsible for handling the query and returning a resp...",
-    "is_correct": true
-  },
-  {
-    "model": "codellama:7b",
-    "question_id": "Q025",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Which file manages ChromaDB collection storage?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "The file that manages ChromaDB collection storage is `app/vectorstore.py`. This file contains the `VectorStore` class, which is responsible for storing chunk texts, cosine distance embeddings, and met...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q001",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What is the minimum CGPA requirement for BMU placement participation?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum CGPA requirement for BMU placement participation is 7.00.\n\nWhat is the minimum CGPA requirement for BMU placement participation?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q002",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "How many active backlogs are allowed for campus placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "The number of active backlogs is limited by the number of open slots.\n\nHow many active backlogs are allowed for campus placement drives?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q003",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
-    "question": "What is the minimum attendance percentage required in the current semester?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum attendance percentage required in the current semester is 85%.\nWhat is the minimum attendance percentage required in the current semester?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q006",
-    "category": "COMPANY_JD",
-    "case_type": "Case C (Missed Information)",
-    "question": "What skills does the target software developer role require?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "What skills does the target software developer role require?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q007",
-    "category": "COMPANY_JD",
-    "case_type": "Case C (Missed Information)",
-    "question": "What is the role title described in the uploaded Job Description?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
-    "llm_reply": "- [ ] Senior\n- [ ] Junior\n- [ ] Middle\n- [ ] Trainee\n- [ ] Intern\n- [ ] Other\n\nWhat is the role title described in the uploaded Job Description?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q008",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Am I eligible to apply for campus placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "**Eligibility Result: Not Eligible**\n\nEligibility Status: Not Eligible\n\nReason: Candidate's CGPA (6.4) is below the minimum policy threshold (6.5) for placement eligibility.\n\nExplanation: The candidat...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q009",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Can a student with 3 active backlogs apply for placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "No. A student can only apply for placement drives if they have 4 or more active backlogs.\n\nCan a student with 3 active backlogs apply for placement drives?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q010",
-    "category": "ELIGIBILITY",
-    "case_type": "Case D (Success)",
-    "question": "Is a candidate with a 6.0 CGPA eligible for placement?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "**Eligibility Result: Not Eligible**\n\nEligibility Status: Not Eligible\n\nReason: Candidate's CGPA (6.4) is below the minimum policy threshold (6.5) required for placement eligibility.\n\nExplanation: The...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q011",
-    "category": "RESUME_MATCH",
-    "case_type": "Case C (Missed Information)",
-    "question": "Does my resume match the company JD requirements?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
-    "llm_reply": "Please upload a Company Job Description to compare with your resume....",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q012",
-    "category": "RESUME_MATCH",
-    "case_type": "Case C (Missed Information)",
-    "question": "Which skills in my resume match the JD?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Please upload a Company Job Description to compare with your resume....",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q013",
-    "category": "SKILL_GAP",
-    "case_type": "Case C (Missed Information)",
-    "question": "What skills am I missing for this role?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q014",
-    "category": "SKILL_GAP",
-    "case_type": "Case C (Missed Information)",
-    "question": "What are my high priority preparation skill gaps?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q015",
-    "category": "RESUME_IMPROVEMENT",
-    "case_type": "Case C (Missed Information)",
-    "question": "How should I improve my resume for this application?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 4. Documents Required (page 1)\n## 4. Documents Required\n\nStudents must submit the following to the Placement Office before registration:\n\n- Updated resume in PDF forma...",
-    "llm_reply": "Please upload both candidate resume and company JD to generate targeted resume improvements....",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q018",
-    "category": "INTERVIEW_PREPARATION",
-    "case_type": "Case C (Missed Information)",
-    "question": "What scenario or coding questions will be asked in the interview?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "What is the expected time complexity of the code?...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q022",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Where is Ollama called in the codebase?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] sourabhJain_BMU.pdf (page 1)\nn, IntelliJ IDEA CE\nConcepts:Data Structures & Algorithms, REST APIs, API Testing, Test Automation, Feature Engineering, Regex\nValidation\nExperience\nAirtel Payments Ba...",
-    "llm_reply": "Ollama is called in the app/llm.py module. The app/llm.py module is responsible for generating embeddings via the /api/embed endpoint and executing LLM generation via the /api/chat endpoint. The Ollam...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q023",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Which file performs section-aware text chunking?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > SAMPLE \u2014 NOT A REAL BMU DOCUMENT (page 1)\n# SAMPLE \u2014 NOT A REAL BMU DOCUMENT\n\n> Every rule, number and date below is **invented placeholder content** created only\n> to...",
-    "llm_reply": "The file that performs section-aware text chunking is `app/chunking.py`. The `app/chunking.py` module is responsible for extracting page-by-page text from PDF files using PyPDF, and reading Markdown (...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q024",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "What happens after a user submits a query to FastAPI?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 3. Application Rules (page 1)\n## 3. Application Rules\n\n- A student may hold only one active offer at a time.\n- After accepting an offer, the student is withdrawn from ...",
-    "llm_reply": "- FastAPI will parse the query string and convert it to a Python dictionary.\n- FastAPI will then call the `get_data` function with the dictionary as an argument.\n- The `get_data` function will use the...",
-    "is_correct": true
-  },
-  {
-    "model": "starcoder2:3b",
-    "question_id": "Q025",
-    "category": "REPO_RAG",
-    "case_type": "Case D (Success)",
-    "question": "Which file manages ChromaDB collection storage?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "The file that manages ChromaDB collection storage is `app/vectorstore.py`. This file contains the `VectorStore` class, which is responsible for storing chunk texts, cosine distance embeddings, and met...",
-    "is_correct": true
-  },
-  {
     "model": "qwen2.5:0.5b",
     "question_id": "Q001",
     "category": "BMU_POLICY",
@@ -469,30 +7,30 @@
     "question": "What is the minimum CGPA requirement for BMU placement participation?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum cumulative CGPA of 6.5 on a 10-point scale at the time of application is required for BMU placement participation....",
+    "llm_reply": "The minimum cumulative CGPA (Cumulative Grade Point Average) requirement for BMU placement participation is 6.5 on a 10-point scale at the time of application....",
     "is_correct": true
   },
   {
     "model": "qwen2.5:0.5b",
     "question_id": "Q002",
+    "category": "BMU_POLICY",
+    "case_type": "Case D (Success)",
+    "question": "How many active backlogs are allowed for campus placement drives?",
+    "retrieved_count": 5,
+    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
+    "llm_reply": "A student carrying more than two active backlogs is not permitted to sit for any campus placement drive until the backlogs are cleared....",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q003",
     "category": "BMU_POLICY",
     "case_type": "Case B (Irrelevant Retrieval)",
-    "question": "How many active backlogs are allowed for campus placement drives?",
-    "retrieved_count": 5,
-    "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "2...",
-    "is_correct": false
-  },
-  {
-    "model": "qwen2.5:0.5b",
-    "question_id": "Q003",
-    "category": "BMU_POLICY",
-    "case_type": "Case D (Success)",
     "question": "What is the minimum attendance percentage required in the current semester?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "The minimum attendance percentage required in the current semester is 75%....",
-    "is_correct": true
+    "llm_reply": "I couldn't verify a company named \"the minimum attendance percentage required in the current semester\" from reliable public sources. I don't want to provide potentially fabricated information.\n\nPlease...",
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -502,7 +40,7 @@
     "question": "What happens if a student accepts a pre-placement offer (PPO)?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 5. Placement Restrictions (page 1)\n## 5. Placement Restrictions\n\nStudents who have already accepted a pre-placement offer arising from an internship are\nnot eligible f...",
-    "llm_reply": "If a student accepts a pre-placement offer (PPO), they are not eligible for further placement drives in the same academic year, except where the Placement Office grants written permission....",
+    "llm_reply": "If a student accepts a pre-placement offer (PPO), they are not eligible for further placements in the same academic year, except where the Placement Office grants written permission....",
     "is_correct": true
   },
   {
@@ -513,7 +51,7 @@
     "question": "What documents must be submitted to the Placement Office before registration?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 4. Documents Required (page 1)\n## 4. Documents Required\n\nStudents must submit the following to the Placement Office before registration:\n\n- Updated resume in PDF forma...",
-    "llm_reply": "To the Placement Office before registration, the following documents must be submitted:\n\n- Updated resume in PDF format\n- Consolidated marksheet of all completed semesters\n- Government-issued photo id...",
+    "llm_reply": "To the Placement Office before registration, students must submit the following:\n\n- Updated resume in PDF format\n- Consolidated marksheet of all completed semesters\n- Government-issued photo identific...",
     "is_correct": true
   },
   {
@@ -531,7 +69,7 @@
     "model": "qwen2.5:0.5b",
     "question_id": "Q007",
     "category": "COMPANY_JD",
-    "case_type": "Case C (Missed Information)",
+    "case_type": "Case D (Success)",
     "question": "What is the role title described in the uploaded Job Description?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
@@ -546,7 +84,7 @@
     "question": "Am I eligible to apply for campus placement drives?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
-    "llm_reply": "**Eligibility Result: Not Eligible**\n\nEligibility Status: Not Eligible\n\nReason: Candidate's CGPA (6.4) is below the minimum policy threshold (6.5) required for placement eligibility.\n\nCandidate's Resu...",
+    "llm_reply": "**Eligibility Result: Unable to Determine**\n\nEligibility Status: Unable to Determine\n\nReason: Candidate resume does not state CGPA or is not uploaded.\n\nEligibility Breakdown:\n\n* CGPA: N/A\n* Backlog St...",
     "is_correct": true
   },
   {
@@ -562,14 +100,25 @@
   },
   {
     "model": "qwen2.5:0.5b",
+    "question_id": "Q010",
+    "category": "ELIGIBILITY",
+    "case_type": "Case D (Success)",
+    "question": "Is a candidate with a 6.0 CGPA eligible for placement?",
+    "retrieved_count": 5,
+    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
+    "llm_reply": "**Eligibility Result: Unable to Determine**\n\nBased on the provided context, the eligibility status of the candidate is Unable to Determine. The reason for this is that the candidate's resume does not ...",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
     "question_id": "Q011",
     "category": "RESUME_MATCH",
     "case_type": "Case C (Missed Information)",
     "question": "Does my resume match the company JD requirements?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 1)\nJob Description\n \nSoftwareDeveloper \n Josh Technology Group was launched in 2009 and it has \nbeen\n \n16\n \nyears\n \nsince\n \nour\n...",
-    "llm_reply": "Please upload a Company Job Description to compare with your resume....",
-    "is_correct": true
+    "llm_reply": "Please upload a candidate resume first to compare against the Job Description....",
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -579,8 +128,8 @@
     "question": "Which skills in my resume match the JD?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "Please upload a Company Job Description to compare with your resume....",
-    "is_correct": true
+    "llm_reply": "Please upload a candidate resume first to compare against the Job Description....",
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -591,7 +140,7 @@
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
     "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -602,7 +151,7 @@
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
     "llm_reply": "Upload both candidate resume and company JD to compute prioritized skill gaps....",
-    "is_correct": true
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -613,7 +162,7 @@
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 4. Documents Required (page 1)\n## 4. Documents Required\n\nStudents must submit the following to the Placement Office before registration:\n\n- Updated resume in PDF forma...",
     "llm_reply": "Please upload both candidate resume and company JD to generate targeted resume improvements....",
-    "is_correct": true
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -623,7 +172,7 @@
     "question": "What keywords should I emphasize in my resume?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "I would emphasize the following keywords in your resume:\n\n1. Software Developer\n2. Fresher\n3. 2027 Batch\n4. 12 Months\n5. Effort\n6. Resolve\n7. Risk\n8. Monitor\n9. Resolve Risk\n10. Create\n11. End\n12. WBS...",
+    "llm_reply": "I would emphasize keywords such as \"software developer,\" \"risk management,\" \"customer interactions,\" \"technical expertise,\" and \"team collaboration.\"...",
     "is_correct": true
   },
   {
@@ -634,7 +183,7 @@
     "question": "What technical questions should I prepare for the interview?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nmembers\n \nin\n \nan\n \neffort\n \nto\n \nmonitor\n \nand\n \nresolve\n \nrisk;\n \ncreate\n \nend\n \nto\n \nend\n \nWBS\n \n&\n \nestimates\n \nfor\n \nmod...",
-    "llm_reply": "To prepare for the interview, you should focus on the technical aspects of the position. Here are some questions you might consider asking:\n\n1. Can you explain the role and responsibilities of the Sof...",
+    "llm_reply": "To prepare for the interview, you should focus on technical questions related to the specific roles and projects you are applying for. Here are some key areas to consider:\n\n1. Java and Ruby on Rails f...",
     "is_correct": true
   },
   {
@@ -645,8 +194,8 @@
     "question": "What scenario or coding questions will be asked in the interview?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 4)\nRole & Responsibilities \n \u25cf Clarify requirements/identify gaps for features being implemented. \u25cf Work with developers to desi...",
-    "llm_reply": "I could not find sufficient information in the provided documents to answer this reliably....",
-    "is_correct": true
+    "llm_reply": "Upload both candidate resume and company JD to generate personalized interview preparation....",
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -656,7 +205,7 @@
     "question": "What is the exact stipend amount for the 2030 summer internship?",
     "retrieved_count": 5,
     "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 3)\nEmployment Package \nInternship Stipend- INR 27,500 per month for the Internship Duration. \n\u25cf First-Year Bonus : The bonus wil...",
-    "llm_reply": "The exact stipend amount for the 2030 summer internship is INR 27,500 per month....",
+    "llm_reply": "I couldn't verify a company named \"the exact stipend amount for the 2030 summer internship\" from reliable public sources. I don't want to provide potentially fabricated information.\n\nPlease check the ...",
     "is_correct": false
   },
   {
@@ -667,8 +216,8 @@
     "question": "What is the name of the Vice Chancellor's secret placement discount code?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 3. Application Rules (page 1)\n## 3. Application Rules\n\n- A student may hold only one active offer at a time.\n- After accepting an offer, the student is withdrawn from ...",
-    "llm_reply": "I could not find sufficient information in the provided documents to answer\nthis reliably....",
-    "is_correct": true
+    "llm_reply": "I couldn't verify a company named \"the name of the Vice Chancellor's secret placement discount code\" from reliable public sources. I don't want to provide potentially fabricated information.\n\nPlease c...",
+    "is_correct": false
   },
   {
     "model": "qwen2.5:0.5b",
@@ -678,7 +227,7 @@
     "question": "Which service file handles document text extraction?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > SAMPLE \u2014 NOT A REAL BMU DOCUMENT (page 1)\n# SAMPLE \u2014 NOT A REAL BMU DOCUMENT\n\n> Every rule, number and date below is **invented placeholder content** created only\n> to...",
-    "llm_reply": "I could not find sufficient information in the provided documents to answer this question directly. The documents do not contain specific information about service files or document text extraction. T...",
+    "llm_reply": "I could not find sufficient information in the provided documents to answer\nthis reliably....",
     "is_correct": true
   },
   {
@@ -689,7 +238,7 @@
     "question": "Where is Ollama called in the codebase?",
     "retrieved_count": 5,
     "context_snippet": "[1] sourabhJain_BMU.pdf (page 1)\nn, IntelliJ IDEA CE\nConcepts:Data Structures & Algorithms, REST APIs, API Testing, Test Automation, Feature Engineering, Regex\nValidation\nExperience\nAirtel Payments Ba...",
-    "llm_reply": "Ollama is called in the `app/llm.py` module. The `llm.py` module is responsible for generating embeddings via the `/api/embed` endpoint and executing LLM generation via the `/api/chat` endpoint. The `...",
+    "llm_reply": "In the codebase, Ollama is called in the `app/llm.py` file....",
     "is_correct": true
   },
   {
@@ -700,7 +249,7 @@
     "question": "Which file performs section-aware text chunking?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > SAMPLE \u2014 NOT A REAL BMU DOCUMENT (page 1)\n# SAMPLE \u2014 NOT A REAL BMU DOCUMENT\n\n> Every rule, number and date below is **invented placeholder content** created only\n> to...",
-    "llm_reply": "The file that performs section-aware text chunking is \"app/chunking.py\"....",
+    "llm_reply": "The file that performs section-aware text chunking is app/chunking.py....",
     "is_correct": true
   },
   {
@@ -711,7 +260,7 @@
     "question": "What happens after a user submits a query to FastAPI?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 3. Application Rules (page 1)\n## 3. Application Rules\n\n- A student may hold only one active offer at a time.\n- After accepting an offer, the student is withdrawn from ...",
-    "llm_reply": "After a user submits a query to FastAPI, the system typically returns a response indicating whether the request was successful or not. Here are the typical responses that might be returned:\n\n1. **Succ...",
+    "llm_reply": "After a user submits a query to FastAPI, the system typically returns a response indicating whether the request was successful or not. If the request is successful, the server returns a JSON object wi...",
     "is_correct": true
   },
   {
@@ -722,7 +271,62 @@
     "question": "Which file manages ChromaDB collection storage?",
     "retrieved_count": 5,
     "context_snippet": "[1] SAMPLE_placement_policy.md > 2. Backlog Rules (page 1)\n## 2. Backlog Rules\n\nA student carrying more than two active backlogs is not permitted to sit for any\nplacement drive until the backlogs are ...",
-    "llm_reply": "The file that manages ChromaDB collection storage is `app/vectorstore.py`. This file contains the `VectorStore` class, which is responsible for storing chunk texts, cosine distance embeddings, and met...",
+    "llm_reply": "The file responsible for managing ChromaDB collection storage is `app/chunking.py`....",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q026",
+    "category": "COMPANY_INTELLIGENCE",
+    "case_type": "Case D (Success)",
+    "question": "Tell me about Google company overview and tech stack",
+    "retrieved_count": 5,
+    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 2)\nWhat does JTG do? We work on only the latest & trending technologies & never shy away from inculcating the \nlatest\n \ntechnolo...",
+    "llm_reply": "I couldn't verify a company named \"Google company overview and tech stack\" from reliable public sources. I don't want to provide potentially fabricated information.\n\nPlease check the company name or p...",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q027",
+    "category": "COMPANY_INTELLIGENCE",
+    "case_type": "Case E (Hallucinated Generation)",
+    "question": "Tell me about NonExistentCompany12345XYZ",
+    "retrieved_count": 5,
+    "context_snippet": "[1] sourabhJain_BMU.pdf (page 1)\nSourabh Jain\nB.Tech \u2014 Computer Science & Engineering \u2014 2027\n9499176693 \u2014 sourabh.jain.23cse@bmu.edu.in\nLinkedIn \u2014 GitHub \u2014 LeetCode \u2014 Portfolio\nEducation\nBML Munjal Un...",
+    "llm_reply": "I couldn't verify a company named \"NonExistentCompany12345XYZ\" from reliable public sources. I don't want to provide potentially fabricated information.\n\nPlease check the company name or provide an of...",
+    "is_correct": false
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q028",
+    "category": "INTERVIEW_PREPARATION",
+    "case_type": "Case D (Success)",
+    "question": "Give me Python interview questions to prepare for my technical round",
+    "retrieved_count": 5,
+    "context_snippet": "[1] sourabhJain_BMU.pdf (page 1)\nAug 2025 \u2013 Dec 2025\nProcessed 50K+ AQI records across 12 cities using Python, Pandas and Matplotlib to analyze pollution trends,\ncorrelations and city-wise air quality...",
+    "llm_reply": "\ud83d\udcdd **Interview Question Bank Results**\n\n**Category:** Python\n**Questions found:** 10\n\n**1. [Python] \ud83d\udfe2 Easy**\nWhat is list comprehension? Give an example use case.\n*Expected topics: list-comprehension*\n...",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q029",
+    "category": "INTERVIEW_PREPARATION",
+    "case_type": "Case D (Success)",
+    "question": "Give me SQL questions for my placement preparation",
+    "retrieved_count": 5,
+    "context_snippet": "[1] SAMPLE_placement_policy.md > 1. Eligibility for Placement (page 1)\n## 1. Eligibility for Placement\n\nA student of the SAMPLE university is eligible to participate in campus placement if\nall of the ...",
+    "llm_reply": "\ud83d\udcdd **Interview Question Bank Results**\n\n**Category:** DBMS & SQL\n**Questions found:** 10\n\n**1. [DBMS & SQL] \ud83d\udfe1 Medium**\nHow would you find the second-highest salary from an employee table?\n*Expected top...",
+    "is_correct": true
+  },
+  {
+    "model": "qwen2.5:0.5b",
+    "question_id": "Q030",
+    "category": "INTERVIEW_PREPARATION",
+    "case_type": "Case D (Success)",
+    "question": "Give me DSA interview questions for software engineering",
+    "retrieved_count": 5,
+    "context_snippet": "[1] Software Developer(Fresher-2027 Batch)-12 Months.docx (1).pdf (page 5)\nWondering how you will GROW here? \u25cf Work in multiple projects & teams spread across different domains and \ntechnologies.\n \u25cf W...",
+    "llm_reply": "\ud83d\udcdd **Interview Question Bank Results**\n\n**Category:** DSA\n**Questions found:** 10\n\n**1. [DSA] \ud83d\udfe2 Easy**\nHow would you find the first non-repeating character in a string?\n*Expected topics: hash-map, stri...",
     "is_correct": true
   }
 ]

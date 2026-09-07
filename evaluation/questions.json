@@ -323,5 +323,70 @@
       "rules": ["Repo self-answering RAG"]
     },
     "expected_behavior": "REPO_MAP_ANSWER"
+  },
+  {
+    "id": "Q026",
+    "category": "COMPANY_INTELLIGENCE",
+    "question": "Tell me about Google company overview and tech stack",
+    "expected_answer": "Overview of Google with business, tech stack, and verified sources",
+    "expected_keyword": "google",
+    "required_sources": ["web_search", "company_intelligence"],
+    "ground_truth": {
+      "facts": ["Google is a multinational technology company", "Primary search and cloud provider"],
+      "rules": ["Live web research entity resolution and verification"]
+    },
+    "expected_behavior": "COMPANY_INTELLIGENCE"
+  },
+  {
+    "id": "Q027",
+    "category": "COMPANY_INTELLIGENCE",
+    "question": "Tell me about NonExistentCompany12345XYZ",
+    "expected_answer": "Abstain with clear message: company could not be verified",
+    "expected_keyword": "could not verify",
+    "required_sources": [],
+    "ground_truth": {
+      "facts": ["Nonexistent company must trigger explicit abstention guardrail"],
+      "rules": ["Never fabricate company information"]
+    },
+    "expected_behavior": "INSUFFICIENT_INFORMATION"
+  },
+  {
+    "id": "Q028",
+    "category": "INTERVIEW_PREPARATION",
+    "question": "Give me Python interview questions to prepare for my technical round",
+    "expected_answer": "Retrieved technical questions from Python category in interview question bank",
+    "expected_keyword": "python",
+    "required_sources": ["interview_question_bank"],
+    "ground_truth": {
+      "facts": ["Questions retrieved from curated interview question bank dataset"],
+      "rules": ["Category and difficulty filtering with generic question guardrail"]
+    },
+    "expected_behavior": "QUESTION_BANK_ANSWER"
+  },
+  {
+    "id": "Q029",
+    "category": "INTERVIEW_PREPARATION",
+    "question": "Give me SQL questions for my placement preparation",
+    "expected_answer": "Retrieved technical questions from DBMS & SQL category",
+    "expected_keyword": "sql",
+    "required_sources": ["interview_question_bank"],
+    "ground_truth": {
+      "facts": ["Questions retrieved from DBMS & SQL category"],
+      "rules": ["Preserve skills, tags, and generic question guardrail"]
+    },
+    "expected_behavior": "QUESTION_BANK_ANSWER"
+  },
+  {
+    "id": "Q030",
+    "category": "INTERVIEW_PREPARATION",
+    "question": "Give me DSA interview questions for software engineering",
+    "expected_answer": "Retrieved DSA coding questions from question bank",
+    "expected_keyword": "dsa",
+    "required_sources": ["interview_question_bank"],
+    "ground_truth": {
+      "facts": ["DSA technical questions retrieved from question bank"],
+      "rules": ["Technical interview preparation from question bank"]
+    },
+    "expected_behavior": "QUESTION_BANK_ANSWER"
   }
 ]

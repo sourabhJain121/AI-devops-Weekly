@@ -1,0 +1,2972 @@
+[
+  {
+    "question_id": "PY-001",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Data Types",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests data types knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "mutability",
+      "syntax",
+      "performance"
+    ],
+    "tags": [
+      "python",
+      "data-types"
+    ]
+  },
+  {
+    "question_id": "PY-002",
+    "question": "What are mutable and immutable objects in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Data Types",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests data types knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "mutability",
+      "objects"
+    ],
+    "tags": [
+      "python",
+      "data-types"
+    ]
+  },
+  {
+    "question_id": "PY-003",
+    "question": "What is the difference between == and is in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Operators",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests operators knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "equality",
+      "identity"
+    ],
+    "tags": [
+      "python",
+      "operators"
+    ]
+  },
+  {
+    "question_id": "PY-004",
+    "question": "What are Python decorators and why are they useful?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Functions",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests functions knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "decorators",
+      "higher-order-functions"
+    ],
+    "tags": [
+      "python",
+      "functions"
+    ]
+  },
+  {
+    "question_id": "PY-005",
+    "question": "What is a generator in Python and how does yield work?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Iterators",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests iterators knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "generators",
+      "yield",
+      "lazy-evaluation"
+    ],
+    "tags": [
+      "python",
+      "iterators"
+    ]
+  },
+  {
+    "question_id": "PY-006",
+    "question": "What is the difference between shallow copy and deep copy?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Objects",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests objects knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "copy",
+      "references",
+      "deep-copy"
+    ],
+    "tags": [
+      "python",
+      "objects"
+    ]
+  },
+  {
+    "question_id": "PY-007",
+    "question": "Explain *args and **kwargs in Python.",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Functions",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests functions knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "arguments",
+      "functions"
+    ],
+    "tags": [
+      "python",
+      "functions"
+    ]
+  },
+  {
+    "question_id": "PY-008",
+    "question": "What is list comprehension? Give an example use case.",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Syntax",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests syntax knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "list-comprehension"
+    ],
+    "tags": [
+      "python",
+      "syntax"
+    ]
+  },
+  {
+    "question_id": "PY-009",
+    "question": "How does exception handling work in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Error Handling",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests error handling knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "try",
+      "except",
+      "finally"
+    ],
+    "tags": [
+      "python",
+      "error-handling"
+    ]
+  },
+  {
+    "question_id": "PY-010",
+    "question": "What is the difference between a module and a package in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Modules",
+    "difficulty": "easy",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests modules knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "module",
+      "package"
+    ],
+    "tags": [
+      "python",
+      "modules"
+    ]
+  },
+  {
+    "question_id": "PY-011",
+    "question": "What is the Global Interpreter Lock (GIL)?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Concurrency",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests concurrency knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "GIL",
+      "threads",
+      "concurrency"
+    ],
+    "tags": [
+      "python",
+      "concurrency"
+    ]
+  },
+  {
+    "question_id": "PY-012",
+    "question": "What is the difference between multiprocessing and multithreading in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Concurrency",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests concurrency knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "multiprocessing",
+      "multithreading",
+      "I/O-bound",
+      "CPU-bound"
+    ],
+    "tags": [
+      "python",
+      "concurrency"
+    ]
+  },
+  {
+    "question_id": "PY-013",
+    "question": "How does memory management and garbage collection work in Python?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Memory",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests memory knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "reference-counting",
+      "garbage-collection"
+    ],
+    "tags": [
+      "python",
+      "memory"
+    ]
+  },
+  {
+    "question_id": "PY-014",
+    "question": "What are lambda functions, map, filter, and reduce?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Functional Programming",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests functional programming knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "lambda",
+      "map",
+      "filter",
+      "reduce"
+    ],
+    "tags": [
+      "python",
+      "functional-programming"
+    ]
+  },
+  {
+    "question_id": "PY-015",
+    "question": "How would you optimize slow Python code?",
+    "question_type": "technical",
+    "category": "Python",
+    "subcategory": "Optimization",
+    "difficulty": "medium",
+    "skills": [
+      "Python"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the Python concept, provide a small example where useful, and mention important trade-offs or edge cases.",
+    "explanation": "Tests optimization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "profiling",
+      "complexity",
+      "optimization"
+    ],
+    "tags": [
+      "python",
+      "optimization"
+    ]
+  },
+  {
+    "question_id": "DSA-001",
+    "question": "What is the difference between an array and a linked list?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Data Structures",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests data structures knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "array",
+      "linked-list"
+    ],
+    "tags": [
+      "dsa",
+      "data-structures"
+    ]
+  },
+  {
+    "question_id": "DSA-002",
+    "question": "What is the time complexity of binary search?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Searching",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests searching knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "binary-search",
+      "O(log n)"
+    ],
+    "tags": [
+      "dsa",
+      "searching"
+    ]
+  },
+  {
+    "question_id": "DSA-003",
+    "question": "Explain stack and queue with practical examples.",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Linear Data Structures",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests linear data structures knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "stack",
+      "queue"
+    ],
+    "tags": [
+      "dsa",
+      "linear-data-structures"
+    ]
+  },
+  {
+    "question_id": "DSA-004",
+    "question": "What is a hash table and what is its average lookup complexity?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Hashing",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests hashing knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "hash-table",
+      "hashing"
+    ],
+    "tags": [
+      "dsa",
+      "hashing"
+    ]
+  },
+  {
+    "question_id": "DSA-005",
+    "question": "What is the difference between BFS and DFS?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Graphs",
+    "difficulty": "medium",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests graphs knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "BFS",
+      "DFS",
+      "graphs"
+    ],
+    "tags": [
+      "dsa",
+      "graphs"
+    ]
+  },
+  {
+    "question_id": "DSA-006",
+    "question": "How does merge sort work and what is its complexity?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Sorting",
+    "difficulty": "medium",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests sorting knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "merge-sort",
+      "divide-and-conquer"
+    ],
+    "tags": [
+      "dsa",
+      "sorting"
+    ]
+  },
+  {
+    "question_id": "DSA-007",
+    "question": "How does quicksort work and what are its best, average, and worst-case complexities?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Sorting",
+    "difficulty": "medium",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests sorting knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "quicksort",
+      "complexity"
+    ],
+    "tags": [
+      "dsa",
+      "sorting"
+    ]
+  },
+  {
+    "question_id": "DSA-008",
+    "question": "What is dynamic programming?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Algorithms",
+    "difficulty": "medium",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests algorithms knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "dynamic-programming",
+      "memoization"
+    ],
+    "tags": [
+      "dsa",
+      "algorithms"
+    ]
+  },
+  {
+    "question_id": "DSA-009",
+    "question": "What is recursion and what are its advantages and disadvantages?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Algorithms",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests algorithms knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "recursion",
+      "call-stack"
+    ],
+    "tags": [
+      "dsa",
+      "algorithms"
+    ]
+  },
+  {
+    "question_id": "DSA-010",
+    "question": "What is a binary search tree?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Trees",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests trees knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "BST",
+      "trees"
+    ],
+    "tags": [
+      "dsa",
+      "trees"
+    ]
+  },
+  {
+    "question_id": "DSA-011",
+    "question": "What is the difference between a tree and a graph?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Graphs",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests graphs knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "trees",
+      "graphs"
+    ],
+    "tags": [
+      "dsa",
+      "graphs"
+    ]
+  },
+  {
+    "question_id": "DSA-012",
+    "question": "How can you detect a cycle in a linked list?",
+    "question_type": "coding",
+    "category": "DSA",
+    "subcategory": "Linked Lists",
+    "difficulty": "medium",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests linked lists knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "Floyd-cycle-detection",
+      "two-pointers"
+    ],
+    "tags": [
+      "dsa",
+      "linked-lists"
+    ]
+  },
+  {
+    "question_id": "DSA-013",
+    "question": "What is Big-O notation and why is it important?",
+    "question_type": "technical",
+    "category": "DSA",
+    "subcategory": "Complexity",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests complexity knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "Big-O",
+      "time-complexity",
+      "space-complexity"
+    ],
+    "tags": [
+      "dsa",
+      "complexity"
+    ]
+  },
+  {
+    "question_id": "DSA-014",
+    "question": "How would you find the first non-repeating character in a string?",
+    "question_type": "coding",
+    "category": "DSA",
+    "subcategory": "Strings",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests strings knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "hash-map",
+      "strings"
+    ],
+    "tags": [
+      "dsa",
+      "strings"
+    ]
+  },
+  {
+    "question_id": "DSA-015",
+    "question": "How would you find two numbers in an array that add up to a target?",
+    "question_type": "coding",
+    "category": "DSA",
+    "subcategory": "Arrays",
+    "difficulty": "easy",
+    "skills": [
+      "DSA"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data structure or algorithm, explain the approach, state time and space complexity, and give a small example.",
+    "explanation": "Tests arrays knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "two-sum",
+      "hash-map"
+    ],
+    "tags": [
+      "dsa",
+      "arrays"
+    ]
+  },
+  {
+    "question_id": "DB-001",
+    "question": "What is the difference between a primary key and a foreign key?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Keys",
+    "difficulty": "easy",
+    "skills": [
+      "SQL",
+      "DBMS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests keys knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "primary-key",
+      "foreign-key"
+    ],
+    "tags": [
+      "dbms-sql",
+      "keys"
+    ]
+  },
+  {
+    "question_id": "DB-002",
+    "question": "What is database normalization and why is it used?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Normalization",
+    "difficulty": "medium",
+    "skills": [
+      "SQL",
+      "DBMS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests normalization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "normalization",
+      "redundancy"
+    ],
+    "tags": [
+      "dbms-sql",
+      "normalization"
+    ]
+  },
+  {
+    "question_id": "DB-003",
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "SQL Commands",
+    "difficulty": "easy",
+    "skills": [
+      "SQL",
+      "DBMS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests sql commands knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP"
+    ],
+    "tags": [
+      "dbms-sql",
+      "sql-commands"
+    ]
+  },
+  {
+    "question_id": "DB-004",
+    "question": "What are SQL joins? Explain INNER, LEFT, RIGHT, and FULL joins.",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Joins",
+    "difficulty": "medium",
+    "skills": [
+      "SQL"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests joins knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "joins",
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "FULL JOIN"
+    ],
+    "tags": [
+      "dbms-sql",
+      "joins"
+    ]
+  },
+  {
+    "question_id": "DB-005",
+    "question": "What is an index and how does it improve query performance?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Indexes",
+    "difficulty": "medium",
+    "skills": [
+      "SQL",
+      "DBMS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests indexes knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "indexing",
+      "query-performance"
+    ],
+    "tags": [
+      "dbms-sql",
+      "indexes"
+    ]
+  },
+  {
+    "question_id": "DB-006",
+    "question": "What is a transaction and what are ACID properties?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Transactions",
+    "difficulty": "medium",
+    "skills": [
+      "SQL",
+      "DBMS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests transactions knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "transactions",
+      "ACID"
+    ],
+    "tags": [
+      "dbms-sql",
+      "transactions"
+    ]
+  },
+  {
+    "question_id": "DB-007",
+    "question": "What is the difference between WHERE and HAVING?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "SQL Queries",
+    "difficulty": "easy",
+    "skills": [
+      "SQL"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests sql queries knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "WHERE",
+      "HAVING"
+    ],
+    "tags": [
+      "dbms-sql",
+      "sql-queries"
+    ]
+  },
+  {
+    "question_id": "DB-008",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "question_type": "technical",
+    "category": "DBMS & SQL",
+    "subcategory": "Database Types",
+    "difficulty": "medium",
+    "skills": [
+      "SQL",
+      "NoSQL"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests database types knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "relational",
+      "NoSQL"
+    ],
+    "tags": [
+      "dbms-sql",
+      "database-types"
+    ]
+  },
+  {
+    "question_id": "DB-009",
+    "question": "How would you find duplicate records in a SQL table?",
+    "question_type": "coding",
+    "category": "DBMS & SQL",
+    "subcategory": "SQL Queries",
+    "difficulty": "medium",
+    "skills": [
+      "SQL"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests sql queries knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "GROUP BY",
+      "HAVING",
+      "duplicates"
+    ],
+    "tags": [
+      "dbms-sql",
+      "sql-queries"
+    ]
+  },
+  {
+    "question_id": "DB-010",
+    "question": "How would you find the second-highest salary from an employee table?",
+    "question_type": "coding",
+    "category": "DBMS & SQL",
+    "subcategory": "SQL Queries",
+    "difficulty": "medium",
+    "skills": [
+      "SQL"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the database concept, explain why it is used, and provide a simple SQL or practical example.",
+    "explanation": "Tests sql queries knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "subquery",
+      "DENSE_RANK",
+      "salary"
+    ],
+    "tags": [
+      "dbms-sql",
+      "sql-queries"
+    ]
+  },
+  {
+    "question_id": "OOP-001",
+    "question": "What are the four main principles of object-oriented programming?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Fundamentals",
+    "difficulty": "easy",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests fundamentals knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "encapsulation",
+      "inheritance",
+      "polymorphism",
+      "abstraction"
+    ],
+    "tags": [
+      "oop",
+      "fundamentals"
+    ]
+  },
+  {
+    "question_id": "OOP-002",
+    "question": "What is the difference between a class and an object?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Fundamentals",
+    "difficulty": "easy",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests fundamentals knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "class",
+      "object"
+    ],
+    "tags": [
+      "oop",
+      "fundamentals"
+    ]
+  },
+  {
+    "question_id": "OOP-003",
+    "question": "What is inheritance and when should it be used?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Inheritance",
+    "difficulty": "easy",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests inheritance knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "inheritance"
+    ],
+    "tags": [
+      "oop",
+      "inheritance"
+    ]
+  },
+  {
+    "question_id": "OOP-004",
+    "question": "What is polymorphism? Explain with an example.",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Polymorphism",
+    "difficulty": "medium",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests polymorphism knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "polymorphism",
+      "method-overriding"
+    ],
+    "tags": [
+      "oop",
+      "polymorphism"
+    ]
+  },
+  {
+    "question_id": "OOP-005",
+    "question": "What is encapsulation and why is it useful?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Encapsulation",
+    "difficulty": "easy",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests encapsulation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "encapsulation",
+      "data-hiding"
+    ],
+    "tags": [
+      "oop",
+      "encapsulation"
+    ]
+  },
+  {
+    "question_id": "OOP-006",
+    "question": "What is abstraction?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Abstraction",
+    "difficulty": "easy",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests abstraction knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "abstraction",
+      "interfaces"
+    ],
+    "tags": [
+      "oop",
+      "abstraction"
+    ]
+  },
+  {
+    "question_id": "OOP-007",
+    "question": "What is method overloading versus method overriding?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Methods",
+    "difficulty": "medium",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests methods knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "overloading",
+      "overriding"
+    ],
+    "tags": [
+      "oop",
+      "methods"
+    ]
+  },
+  {
+    "question_id": "OOP-008",
+    "question": "What is composition and how is it different from inheritance?",
+    "question_type": "technical",
+    "category": "OOP",
+    "subcategory": "Design",
+    "difficulty": "medium",
+    "skills": [
+      "OOP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OOP concept, explain its purpose, and provide a concise example.",
+    "explanation": "Tests design knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "composition",
+      "inheritance"
+    ],
+    "tags": [
+      "oop",
+      "design"
+    ]
+  },
+  {
+    "question_id": "OS-001",
+    "question": "What is the difference between a process and a thread?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Processes",
+    "difficulty": "easy",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests processes knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "process",
+      "thread"
+    ],
+    "tags": [
+      "operating-systems",
+      "processes"
+    ]
+  },
+  {
+    "question_id": "OS-002",
+    "question": "What is a context switch?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Processes",
+    "difficulty": "medium",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests processes knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "context-switch",
+      "CPU"
+    ],
+    "tags": [
+      "operating-systems",
+      "processes"
+    ]
+  },
+  {
+    "question_id": "OS-003",
+    "question": "What is deadlock and what are its necessary conditions?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Deadlocks",
+    "difficulty": "medium",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests deadlocks knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "deadlock",
+      "mutual-exclusion",
+      "hold-and-wait",
+      "no-preemption",
+      "circular-wait"
+    ],
+    "tags": [
+      "operating-systems",
+      "deadlocks"
+    ]
+  },
+  {
+    "question_id": "OS-004",
+    "question": "What is virtual memory?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Memory Management",
+    "difficulty": "medium",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests memory management knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "virtual-memory",
+      "paging"
+    ],
+    "tags": [
+      "operating-systems",
+      "memory-management"
+    ]
+  },
+  {
+    "question_id": "OS-005",
+    "question": "What is paging?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Memory Management",
+    "difficulty": "medium",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests memory management knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "paging",
+      "pages",
+      "frames"
+    ],
+    "tags": [
+      "operating-systems",
+      "memory-management"
+    ]
+  },
+  {
+    "question_id": "OS-006",
+    "question": "What is CPU scheduling? Name common scheduling algorithms.",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "CPU Scheduling",
+    "difficulty": "easy",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests cpu scheduling knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "FCFS",
+      "SJF",
+      "round-robin"
+    ],
+    "tags": [
+      "operating-systems",
+      "cpu-scheduling"
+    ]
+  },
+  {
+    "question_id": "OS-007",
+    "question": "What is a semaphore and how is it used?",
+    "question_type": "technical",
+    "category": "Operating Systems",
+    "subcategory": "Synchronization",
+    "difficulty": "medium",
+    "skills": [
+      "OS"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the OS concept, explain how it works, and mention practical implications.",
+    "explanation": "Tests synchronization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "semaphore",
+      "synchronization"
+    ],
+    "tags": [
+      "operating-systems",
+      "synchronization"
+    ]
+  },
+  {
+    "question_id": "NET-001",
+    "question": "What is the difference between TCP and UDP?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "Transport Layer",
+    "difficulty": "easy",
+    "skills": [
+      "Networking"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests transport layer knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "TCP",
+      "UDP"
+    ],
+    "tags": [
+      "computer-networks",
+      "transport-layer"
+    ]
+  },
+  {
+    "question_id": "NET-002",
+    "question": "Explain the OSI model and its layers.",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "OSI Model",
+    "difficulty": "easy",
+    "skills": [
+      "Networking"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests osi model knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "OSI",
+      "network-layers"
+    ],
+    "tags": [
+      "computer-networks",
+      "osi-model"
+    ]
+  },
+  {
+    "question_id": "NET-003",
+    "question": "What happens when you enter a URL into a browser?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "Web",
+    "difficulty": "medium",
+    "skills": [
+      "Networking",
+      "HTTP"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests web knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "DNS",
+      "TCP",
+      "TLS",
+      "HTTP"
+    ],
+    "tags": [
+      "computer-networks",
+      "web"
+    ]
+  },
+  {
+    "question_id": "NET-004",
+    "question": "What is DNS and how does it work?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "DNS",
+    "difficulty": "easy",
+    "skills": [
+      "Networking"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests dns knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "DNS",
+      "domain-resolution"
+    ],
+    "tags": [
+      "computer-networks",
+      "dns"
+    ]
+  },
+  {
+    "question_id": "NET-005",
+    "question": "What is an IP address and what is the difference between IPv4 and IPv6?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "IP",
+    "difficulty": "easy",
+    "skills": [
+      "Networking"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests ip knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "IPv4",
+      "IPv6"
+    ],
+    "tags": [
+      "computer-networks",
+      "ip"
+    ]
+  },
+  {
+    "question_id": "NET-006",
+    "question": "What is HTTP versus HTTPS?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "HTTP",
+    "difficulty": "easy",
+    "skills": [
+      "Networking",
+      "Security"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests http knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "HTTP",
+      "HTTPS",
+      "TLS"
+    ],
+    "tags": [
+      "computer-networks",
+      "http"
+    ]
+  },
+  {
+    "question_id": "NET-007",
+    "question": "What is a REST API and what are its common HTTP methods?",
+    "question_type": "technical",
+    "category": "Computer Networks",
+    "subcategory": "APIs",
+    "difficulty": "easy",
+    "skills": [
+      "Networking",
+      "REST"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the networking concept, its purpose, and relevant protocols, layers, or communication flow.",
+    "explanation": "Tests apis knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "REST",
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "tags": [
+      "computer-networks",
+      "apis"
+    ]
+  },
+  {
+    "question_id": "BE-001",
+    "question": "What is FastAPI and why is it useful for backend development?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "FastAPI",
+    "difficulty": "easy",
+    "skills": [
+      "Python",
+      "FastAPI"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests fastapi knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "FastAPI",
+      "ASGI",
+      "APIs"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "fastapi"
+    ]
+  },
+  {
+    "question_id": "BE-002",
+    "question": "What is the difference between synchronous and asynchronous programming?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Async",
+    "difficulty": "medium",
+    "skills": [
+      "Python",
+      "FastAPI"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests async knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "async",
+      "await",
+      "concurrency"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "async"
+    ]
+  },
+  {
+    "question_id": "BE-003",
+    "question": "What is middleware in a web application?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Architecture",
+    "difficulty": "medium",
+    "skills": [
+      "Backend"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests architecture knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "middleware",
+      "request",
+      "response"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "architecture"
+    ]
+  },
+  {
+    "question_id": "BE-004",
+    "question": "What is API authentication versus authorization?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Security",
+    "difficulty": "medium",
+    "skills": [
+      "APIs",
+      "Security"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests security knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "authentication",
+      "authorization"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "security"
+    ]
+  },
+  {
+    "question_id": "BE-005",
+    "question": "What is JWT and how is it used in APIs?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Authentication",
+    "difficulty": "medium",
+    "skills": [
+      "APIs",
+      "Security"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests authentication knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "JWT",
+      "tokens"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "authentication"
+    ]
+  },
+  {
+    "question_id": "BE-006",
+    "question": "What is API rate limiting and why is it important?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Reliability",
+    "difficulty": "medium",
+    "skills": [
+      "Backend"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests reliability knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "rate-limiting",
+      "abuse-prevention"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "reliability"
+    ]
+  },
+  {
+    "question_id": "BE-007",
+    "question": "What is input validation and why should APIs perform it?",
+    "question_type": "technical",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "Security",
+    "difficulty": "easy",
+    "skills": [
+      "APIs",
+      "Security"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests security knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "validation",
+      "security"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "security"
+    ]
+  },
+  {
+    "question_id": "BE-008",
+    "question": "How would you design an API endpoint for uploading and processing a resume?",
+    "question_type": "system_design",
+    "category": "Backend / APIs / FastAPI",
+    "subcategory": "API Design",
+    "difficulty": "medium",
+    "skills": [
+      "FastAPI",
+      "APIs"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the backend/API concept, describe how it works, and mention implementation, security, or scalability considerations.",
+    "explanation": "Tests api design knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "file-upload",
+      "validation",
+      "processing"
+    ],
+    "tags": [
+      "backend-apis-fastapi",
+      "api-design"
+    ]
+  },
+  {
+    "question_id": "DEV-001",
+    "question": "What is Git and why is version control important?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Git",
+    "difficulty": "easy",
+    "skills": [
+      "Git",
+      "DevOps"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests git knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "version-control"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "git"
+    ]
+  },
+  {
+    "question_id": "DEV-002",
+    "question": "What is the difference between git merge and git rebase?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Git",
+    "difficulty": "medium",
+    "skills": [
+      "Git"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests git knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "merge",
+      "rebase"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "git"
+    ]
+  },
+  {
+    "question_id": "DEV-003",
+    "question": "What is a Docker image and what is a container?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Docker",
+    "difficulty": "easy",
+    "skills": [
+      "Docker"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests docker knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "image",
+      "container"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "docker"
+    ]
+  },
+  {
+    "question_id": "DEV-004",
+    "question": "What is the difference between a Dockerfile and docker-compose?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Docker",
+    "difficulty": "medium",
+    "skills": [
+      "Docker"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests docker knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "Dockerfile",
+      "docker-compose"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "docker"
+    ]
+  },
+  {
+    "question_id": "DEV-005",
+    "question": "Why are containers useful in application deployment?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Containers",
+    "difficulty": "easy",
+    "skills": [
+      "Docker",
+      "DevOps"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests containers knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "containers",
+      "reproducibility"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "containers"
+    ]
+  },
+  {
+    "question_id": "DEV-006",
+    "question": "What is CI/CD?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "CI/CD",
+    "difficulty": "easy",
+    "skills": [
+      "DevOps"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests ci/cd knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "CI",
+      "CD",
+      "automation"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "ci/cd"
+    ]
+  },
+  {
+    "question_id": "DEV-007",
+    "question": "What is a Docker volume and why would you use one?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Docker",
+    "difficulty": "medium",
+    "skills": [
+      "Docker"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests docker knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "volumes",
+      "persistence"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "docker"
+    ]
+  },
+  {
+    "question_id": "DEV-008",
+    "question": "How would you reduce the size of a Docker image?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Docker Optimization",
+    "difficulty": "medium",
+    "skills": [
+      "Docker"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests docker optimization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "multi-stage-build",
+      "slim-images"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "docker-optimization"
+    ]
+  },
+  {
+    "question_id": "DEV-009",
+    "question": "What is an environment variable and why should secrets not be hardcoded?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Configuration",
+    "difficulty": "easy",
+    "skills": [
+      "DevOps",
+      "Security"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests configuration knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "environment-variables",
+      "secrets"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "configuration"
+    ]
+  },
+  {
+    "question_id": "DEV-010",
+    "question": "How would you deploy a Python API using Docker?",
+    "question_type": "technical",
+    "category": "Git / Docker / DevOps",
+    "subcategory": "Deployment",
+    "difficulty": "medium",
+    "skills": [
+      "Python",
+      "Docker",
+      "DevOps"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the DevOps concept and explain its practical role in development, deployment, reproducibility, or collaboration.",
+    "explanation": "Tests deployment knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "Docker",
+      "API",
+      "deployment"
+    ],
+    "tags": [
+      "git-docker-devops",
+      "deployment"
+    ]
+  },
+  {
+    "question_id": "ML-001",
+    "question": "What is supervised learning versus unsupervised learning?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Fundamentals",
+    "difficulty": "easy",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests fundamentals knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "supervised",
+      "unsupervised"
+    ],
+    "tags": [
+      "machine-learning",
+      "fundamentals"
+    ]
+  },
+  {
+    "question_id": "ML-002",
+    "question": "What is overfitting and how can you reduce it?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Model Evaluation",
+    "difficulty": "easy",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests model evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "overfitting",
+      "regularization"
+    ],
+    "tags": [
+      "machine-learning",
+      "model-evaluation"
+    ]
+  },
+  {
+    "question_id": "ML-003",
+    "question": "What is the bias-variance tradeoff?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Model Evaluation",
+    "difficulty": "medium",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests model evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "bias",
+      "variance"
+    ],
+    "tags": [
+      "machine-learning",
+      "model-evaluation"
+    ]
+  },
+  {
+    "question_id": "ML-004",
+    "question": "What is the difference between classification and regression?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Problem Types",
+    "difficulty": "easy",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests problem types knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "classification",
+      "regression"
+    ],
+    "tags": [
+      "machine-learning",
+      "problem-types"
+    ]
+  },
+  {
+    "question_id": "ML-005",
+    "question": "What is cross-validation and why is it useful?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Evaluation",
+    "difficulty": "medium",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "cross-validation"
+    ],
+    "tags": [
+      "machine-learning",
+      "evaluation"
+    ]
+  },
+  {
+    "question_id": "ML-006",
+    "question": "What is precision, recall, and F1-score?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Metrics",
+    "difficulty": "easy",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests metrics knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "precision",
+      "recall",
+      "F1"
+    ],
+    "tags": [
+      "machine-learning",
+      "metrics"
+    ]
+  },
+  {
+    "question_id": "ML-007",
+    "question": "What is feature scaling and when is it needed?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Preprocessing",
+    "difficulty": "medium",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests preprocessing knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "normalization",
+      "standardization"
+    ],
+    "tags": [
+      "machine-learning",
+      "preprocessing"
+    ]
+  },
+  {
+    "question_id": "ML-008",
+    "question": "What is regularization? Explain L1 and L2 regularization.",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Regularization",
+    "difficulty": "medium",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests regularization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "L1",
+      "L2",
+      "regularization"
+    ],
+    "tags": [
+      "machine-learning",
+      "regularization"
+    ]
+  },
+  {
+    "question_id": "ML-009",
+    "question": "How do you handle missing values in a dataset?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Data Preprocessing",
+    "difficulty": "easy",
+    "skills": [
+      "Machine Learning",
+      "Data Science"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests data preprocessing knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "missing-values",
+      "imputation"
+    ],
+    "tags": [
+      "machine-learning",
+      "data-preprocessing"
+    ]
+  },
+  {
+    "question_id": "ML-010",
+    "question": "How would you evaluate a machine learning model for an imbalanced classification problem?",
+    "question_type": "technical",
+    "category": "Machine Learning",
+    "subcategory": "Evaluation",
+    "difficulty": "hard",
+    "skills": [
+      "Machine Learning"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the ML concept, explain the intuition, and mention an example, metric, trade-off, or mitigation strategy.",
+    "explanation": "Tests evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "imbalanced-data",
+      "precision",
+      "recall",
+      "PR-AUC"
+    ],
+    "tags": [
+      "machine-learning",
+      "evaluation"
+    ]
+  },
+  {
+    "question_id": "GEN-001",
+    "question": "What is a large language model (LLM)?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Fundamentals",
+    "difficulty": "easy",
+    "skills": [
+      "GenAI",
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests fundamentals knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "LLM",
+      "transformer"
+    ],
+    "tags": [
+      "genai-llms",
+      "fundamentals"
+    ]
+  },
+  {
+    "question_id": "GEN-002",
+    "question": "What is a transformer architecture at a high level?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Transformers",
+    "difficulty": "medium",
+    "skills": [
+      "GenAI",
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests transformers knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "transformer",
+      "attention"
+    ],
+    "tags": [
+      "genai-llms",
+      "transformers"
+    ]
+  },
+  {
+    "question_id": "GEN-003",
+    "question": "What is attention in a transformer model?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Transformers",
+    "difficulty": "medium",
+    "skills": [
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests transformers knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "attention",
+      "self-attention"
+    ],
+    "tags": [
+      "genai-llms",
+      "transformers"
+    ]
+  },
+  {
+    "question_id": "GEN-004",
+    "question": "What is tokenization and why does it matter for LLMs?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Tokenization",
+    "difficulty": "easy",
+    "skills": [
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests tokenization knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "tokens",
+      "tokenization"
+    ],
+    "tags": [
+      "genai-llms",
+      "tokenization"
+    ]
+  },
+  {
+    "question_id": "GEN-005",
+    "question": "What is temperature in text generation?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Generation",
+    "difficulty": "easy",
+    "skills": [
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests generation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "temperature",
+      "sampling"
+    ],
+    "tags": [
+      "genai-llms",
+      "generation"
+    ]
+  },
+  {
+    "question_id": "GEN-006",
+    "question": "What is prompt engineering?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Prompting",
+    "difficulty": "easy",
+    "skills": [
+      "GenAI"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests prompting knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "prompt-engineering"
+    ],
+    "tags": [
+      "genai-llms",
+      "prompting"
+    ]
+  },
+  {
+    "question_id": "GEN-007",
+    "question": "What causes hallucinations in LLM applications and how can they be reduced?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Reliability",
+    "difficulty": "medium",
+    "skills": [
+      "LLM",
+      "GenAI"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests reliability knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "hallucination",
+      "grounding"
+    ],
+    "tags": [
+      "genai-llms",
+      "reliability"
+    ]
+  },
+  {
+    "question_id": "GEN-008",
+    "question": "How would you evaluate an LLM-powered application?",
+    "question_type": "technical",
+    "category": "GenAI / LLMs",
+    "subcategory": "Evaluation",
+    "difficulty": "hard",
+    "skills": [
+      "LLM",
+      "GenAI"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the LLM/GenAI concept at a high level and discuss practical considerations and limitations.",
+    "explanation": "Tests evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "evaluation",
+      "groundedness",
+      "relevance"
+    ],
+    "tags": [
+      "genai-llms",
+      "evaluation"
+    ]
+  },
+  {
+    "question_id": "RAG-001",
+    "question": "What is Retrieval-Augmented Generation (RAG)?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "RAG Fundamentals",
+    "difficulty": "easy",
+    "skills": [
+      "RAG",
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests rag fundamentals knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "retrieval",
+      "generation"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "rag-fundamentals"
+    ]
+  },
+  {
+    "question_id": "RAG-002",
+    "question": "Why are embeddings used in RAG systems?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Embeddings",
+    "difficulty": "easy",
+    "skills": [
+      "Embeddings",
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests embeddings knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "embeddings",
+      "semantic-search"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "embeddings"
+    ]
+  },
+  {
+    "question_id": "RAG-003",
+    "question": "What is a vector database?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Vector Databases",
+    "difficulty": "easy",
+    "skills": [
+      "Vector DB",
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests vector databases knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "vector-database",
+      "similarity-search"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "vector-databases"
+    ]
+  },
+  {
+    "question_id": "RAG-004",
+    "question": "What is chunking and why does chunk size affect retrieval quality?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Chunking",
+    "difficulty": "medium",
+    "skills": [
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests chunking knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "chunking",
+      "overlap",
+      "retrieval"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "chunking"
+    ]
+  },
+  {
+    "question_id": "RAG-005",
+    "question": "What is cosine similarity?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Similarity",
+    "difficulty": "medium",
+    "skills": [
+      "Embeddings"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests similarity knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "cosine-similarity",
+      "vectors"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "similarity"
+    ]
+  },
+  {
+    "question_id": "RAG-006",
+    "question": "How can you reduce hallucinations in a RAG system?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Reliability",
+    "difficulty": "medium",
+    "skills": [
+      "RAG",
+      "LLM"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests reliability knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "grounding",
+      "citations",
+      "abstention"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "reliability"
+    ]
+  },
+  {
+    "question_id": "RAG-007",
+    "question": "How would you evaluate retrieval quality in a RAG system?",
+    "question_type": "technical",
+    "category": "RAG / Embeddings / Vector DB",
+    "subcategory": "Evaluation",
+    "difficulty": "hard",
+    "skills": [
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Explain the component and its role in retrieval/generation, including quality and reliability considerations.",
+    "explanation": "Tests evaluation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "retrieval-evaluation",
+      "precision",
+      "recall"
+    ],
+    "tags": [
+      "rag-embeddings-vector-db",
+      "evaluation"
+    ]
+  },
+  {
+    "question_id": "SD-001",
+    "question": "How would you design a scalable document question-answering system?",
+    "question_type": "system_design",
+    "category": "System Design",
+    "subcategory": "RAG Systems",
+    "difficulty": "hard",
+    "skills": [
+      "System Design",
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Identify requirements, propose components, explain data flow, and discuss scalability, reliability, security, and trade-offs.",
+    "explanation": "Tests rag systems knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "retrieval",
+      "scaling",
+      "caching"
+    ],
+    "tags": [
+      "system-design",
+      "rag-systems"
+    ]
+  },
+  {
+    "question_id": "SD-002",
+    "question": "How would you design a multi-tenant RAG system?",
+    "question_type": "system_design",
+    "category": "System Design",
+    "subcategory": "Multi-Tenancy",
+    "difficulty": "hard",
+    "skills": [
+      "System Design",
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Identify requirements, propose components, explain data flow, and discuss scalability, reliability, security, and trade-offs.",
+    "explanation": "Tests multi-tenancy knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "tenant-isolation",
+      "metadata-filtering"
+    ],
+    "tags": [
+      "system-design",
+      "multi-tenancy"
+    ]
+  },
+  {
+    "question_id": "SD-003",
+    "question": "How would you design a URL-based web research service?",
+    "question_type": "system_design",
+    "category": "System Design",
+    "subcategory": "Web Research",
+    "difficulty": "hard",
+    "skills": [
+      "System Design",
+      "Backend"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Identify requirements, propose components, explain data flow, and discuss scalability, reliability, security, and trade-offs.",
+    "explanation": "Tests web research knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "search",
+      "fetching",
+      "validation",
+      "caching"
+    ],
+    "tags": [
+      "system-design",
+      "web-research"
+    ]
+  },
+  {
+    "question_id": "SD-004",
+    "question": "How would you design an interview preparation service using resume, JD, and question-bank data?",
+    "question_type": "system_design",
+    "category": "System Design",
+    "subcategory": "Placement Intelligence",
+    "difficulty": "hard",
+    "skills": [
+      "System Design",
+      "RAG"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Identify requirements, propose components, explain data flow, and discuss scalability, reliability, security, and trade-offs.",
+    "explanation": "Tests placement intelligence knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "resume",
+      "JD",
+      "retrieval",
+      "personalization"
+    ],
+    "tags": [
+      "system-design",
+      "placement-intelligence"
+    ]
+  },
+  {
+    "question_id": "SD-005",
+    "question": "How would you make an AI application reliable when external APIs fail?",
+    "question_type": "system_design",
+    "category": "System Design",
+    "subcategory": "Reliability",
+    "difficulty": "medium",
+    "skills": [
+      "System Design",
+      "Backend"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Identify requirements, propose components, explain data flow, and discuss scalability, reliability, security, and trade-offs.",
+    "explanation": "Tests reliability knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "timeouts",
+      "fallbacks",
+      "circuit-breaker",
+      "abstention"
+    ],
+    "tags": [
+      "system-design",
+      "reliability"
+    ]
+  },
+  {
+    "question_id": "DATA-001",
+    "question": "What is the difference between ETL and ELT?",
+    "question_type": "technical",
+    "category": "Data Science / Data Engineering",
+    "subcategory": "Data Pipelines",
+    "difficulty": "easy",
+    "skills": [
+      "Data Engineering"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data concept, explain practical use, and discuss quality, scalability, or processing considerations.",
+    "explanation": "Tests data pipelines knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "ETL",
+      "ELT"
+    ],
+    "tags": [
+      "data-science-data-engineering",
+      "data-pipelines"
+    ]
+  },
+  {
+    "question_id": "DATA-002",
+    "question": "What is data cleaning and why is it important?",
+    "question_type": "technical",
+    "category": "Data Science / Data Engineering",
+    "subcategory": "Data Quality",
+    "difficulty": "easy",
+    "skills": [
+      "Data Science"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data concept, explain practical use, and discuss quality, scalability, or processing considerations.",
+    "explanation": "Tests data quality knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "data-cleaning",
+      "quality"
+    ],
+    "tags": [
+      "data-science-data-engineering",
+      "data-quality"
+    ]
+  },
+  {
+    "question_id": "DATA-003",
+    "question": "What is the difference between batch processing and stream processing?",
+    "question_type": "technical",
+    "category": "Data Science / Data Engineering",
+    "subcategory": "Processing",
+    "difficulty": "medium",
+    "skills": [
+      "Data Engineering"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data concept, explain practical use, and discuss quality, scalability, or processing considerations.",
+    "explanation": "Tests processing knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "batch",
+      "streaming"
+    ],
+    "tags": [
+      "data-science-data-engineering",
+      "processing"
+    ]
+  },
+  {
+    "question_id": "DATA-004",
+    "question": "How would you handle duplicate and inconsistent records in a dataset?",
+    "question_type": "technical",
+    "category": "Data Science / Data Engineering",
+    "subcategory": "Data Quality",
+    "difficulty": "medium",
+    "skills": [
+      "Data Engineering",
+      "Data Science"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data concept, explain practical use, and discuss quality, scalability, or processing considerations.",
+    "explanation": "Tests data quality knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "duplicates",
+      "validation"
+    ],
+    "tags": [
+      "data-science-data-engineering",
+      "data-quality"
+    ]
+  },
+  {
+    "question_id": "DATA-005",
+    "question": "What metrics would you use to monitor a production data pipeline?",
+    "question_type": "technical",
+    "category": "Data Science / Data Engineering",
+    "subcategory": "Monitoring",
+    "difficulty": "medium",
+    "skills": [
+      "Data Engineering"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Define the data concept, explain practical use, and discuss quality, scalability, or processing considerations.",
+    "explanation": "Tests monitoring knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "freshness",
+      "completeness",
+      "latency",
+      "quality"
+    ],
+    "tags": [
+      "data-science-data-engineering",
+      "monitoring"
+    ]
+  },
+  {
+    "question_id": "HR-001",
+    "question": "Tell me about yourself.",
+    "question_type": "behavioral",
+    "category": "HR / Behavioral / Placement",
+    "subcategory": "Introduction",
+    "difficulty": "easy",
+    "skills": [
+      "Communication"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Give a specific evidence-based answer using the candidate's own resume/projects and connect it to the role.",
+    "explanation": "Tests introduction knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "introduction",
+      "resume"
+    ],
+    "tags": [
+      "hr-behavioral-placement",
+      "introduction"
+    ]
+  },
+  {
+    "question_id": "HR-002",
+    "question": "Why do you want this role?",
+    "question_type": "behavioral",
+    "category": "HR / Behavioral / Placement",
+    "subcategory": "Motivation",
+    "difficulty": "easy",
+    "skills": [
+      "Communication"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Give a specific evidence-based answer using the candidate's own resume/projects and connect it to the role.",
+    "explanation": "Tests motivation knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "motivation",
+      "role-fit"
+    ],
+    "tags": [
+      "hr-behavioral-placement",
+      "motivation"
+    ]
+  },
+  {
+    "question_id": "HR-003",
+    "question": "Explain one project from your resume in detail.",
+    "question_type": "behavioral",
+    "category": "HR / Behavioral / Placement",
+    "subcategory": "Projects",
+    "difficulty": "easy",
+    "skills": [
+      "Communication",
+      "Projects"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Give a specific evidence-based answer using the candidate's own resume/projects and connect it to the role.",
+    "explanation": "Tests projects knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "problem",
+      "solution",
+      "implementation",
+      "impact"
+    ],
+    "tags": [
+      "hr-behavioral-placement",
+      "projects"
+    ]
+  },
+  {
+    "question_id": "HR-004",
+    "question": "Tell me about a technical challenge you faced and how you solved it.",
+    "question_type": "behavioral",
+    "category": "HR / Behavioral / Placement",
+    "subcategory": "Problem Solving",
+    "difficulty": "medium",
+    "skills": [
+      "Communication",
+      "Problem Solving"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Give a specific evidence-based answer using the candidate's own resume/projects and connect it to the role.",
+    "explanation": "Tests problem solving knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "challenge",
+      "solution",
+      "learning"
+    ],
+    "tags": [
+      "hr-behavioral-placement",
+      "problem-solving"
+    ]
+  },
+  {
+    "question_id": "HR-005",
+    "question": "Why should we hire you?",
+    "question_type": "behavioral",
+    "category": "HR / Behavioral / Placement",
+    "subcategory": "Role Fit",
+    "difficulty": "medium",
+    "skills": [
+      "Communication"
+    ],
+    "role": "Software Engineer",
+    "company_id": null,
+    "source": "interview_question_bank",
+    "answer": "Give a specific evidence-based answer using the candidate's own resume/projects and connect it to the role.",
+    "explanation": "Tests role fit knowledge relevant to placement interview preparation.",
+    "expected_topics": [
+      "strengths",
+      "role-fit",
+      "evidence"
+    ],
+    "tags": [
+      "hr-behavioral-placement",
+      "role-fit"
+    ]
+  }
+]

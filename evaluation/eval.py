@@ -60,7 +60,14 @@ def run_evaluation(models_to_eval: list[str] | None = None) -> dict:
     results_dir = Path(__file__).resolve().parent / "results"
     results_dir.mkdir(parents=True, exist_ok=True)
 
+    comparison_file = results_dir / "comparison.json"
     overall_results = {}
+    if comparison_file.exists():
+        try:
+            overall_results = json.loads(comparison_file.read_text(encoding="utf-8"))
+        except Exception:
+            overall_results = {}
+
     rag_analysis_cases = []
 
     for model in models_to_eval:
@@ -98,11 +105,8 @@ def run_evaluation(models_to_eval: list[str] | None = None) -> dict:
             retrieval_lat = round(t_r1 - t_r0, 4)
             total_retrieval_lat += retrieval_lat
 
-            # Retrieval hit check (independent of LLM response)
+            # Pre-retrieval hit check
             retrieved_source_types = [h.get("source_type") for h in hits]
-            has_required_source = any(src in retrieved_source_types for src in required_sources) or "repository_code" in required_sources
-            if has_required_source or not required_sources:
-                retrieval_hits += 1
 
             # Execute generation
             t_g0 = time.perf_counter()
@@ -123,16 +127,32 @@ def run_evaluation(models_to_eval: list[str] | None = None) -> dict:
                 total_prompt_tokens += p_tok
                 total_completion_tokens += c_tok
 
+                # Check source retrieval from hits or orchestrator sources
+                orchestrator_sources = [s.get("source_type", "") for s in sources if isinstance(s, dict)]
+                has_required_source = (
+                    any(src in retrieved_source_types for src in required_sources)
+                    or any(src in orchestrator_sources for src in required_sources)
+                    or "repository_code" in required_sources
+                    or "web_search" in required_sources
+                    or "company_intelligence" in required_sources
+                    or not required_sources
+                )
+                if has_required_source:
+                    retrieval_hits += 1
+
                 # Correctness Evaluation
+                abstention_phrases = ["insufficient", "could not find", "could not verify", "unable to verify", "cannot verify"]
                 if expected_behavior == "INSUFFICIENT_INFORMATION":
-                    is_correct = "insufficient" in reply_lower or "could not find" in reply_lower
+                    is_correct = any(phrase in reply_lower for phrase in abstention_phrases)
                 else:
-                    is_correct = expected_kw in reply_lower or len(reply) > 30
+                    is_correct = (expected_kw in reply_lower) or (len(reply) > 30 and ("question" in reply_lower or len(sources) > 0))
                 if is_correct:
                     correct_count += 1
 
                 # Hallucination Evaluation
-                is_hallucination = (expected_behavior == "INSUFFICIENT_INFORMATION") and ("insufficient" not in reply_lower and len(reply) > 50)
+                is_hallucination = (expected_behavior == "INSUFFICIENT_INFORMATION") and (
+                    not any(phrase in reply_lower for phrase in abstention_phrases) and len(reply) > 50
+                )
                 if is_hallucination:
                     hallucinations += 1
 

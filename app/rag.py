@@ -27,12 +27,71 @@ INSUFFICIENT = (
 )
 
 
+import re
+
+GENERIC_SEARCH_TERMS = {
+    "what", "the", "for", "and", "are", "with", "this", "that", "from", "how", "can",
+    "bmu", "placement", "campus", "university", "college", "student", "drive", "rules", "policy",
+    "does", "tell", "about", "give", "show", "many", "much", "when", "where", "which"
+}
+
+
+def filter_relevant_hits(hits: list[dict], question: str) -> list[dict]:
+    """Prunes low-relevance or off-topic chunks so only genuinely relevant evidence reaches the model."""
+    if not hits:
+        return []
+
+    q_words = set(re.findall(r"\b[a-zA-Z0-9_]{3,}\b", question.lower()))
+    discriminative_q = q_words - GENERIC_SEARCH_TERMS
+    best_score = hits[0].get("score", 0.0)
+
+    filtered = []
+    for h in hits:
+        score = h.get("score", 0.0)
+        text_words = set(re.findall(r"\b[a-zA-Z0-9_]{3,}\b", h["text"].lower()))
+        section_words = set(re.findall(r"\b[a-zA-Z0-9_]{3,}\b", (h.get("section") or "").lower()))
+        combined_words = text_words | section_words
+
+        disc_overlap = discriminative_q & combined_words
+
+        if best_score >= 0.75:
+            # When we have a strong matching top chunk, only keep chunks that are very close in score
+            # and actually share discriminative query terms, or exceed high absolute threshold
+            if score >= 0.75 and (disc_overlap or not discriminative_q):
+                filtered.append(h)
+            elif (best_score - score) <= 0.08 and disc_overlap:
+                filtered.append(h)
+        else:
+            if score >= 0.65 or disc_overlap:
+                filtered.append(h)
+
+    if filtered:
+        return filtered
+    return [hits[0]] if hits and hits[0].get("score", 0.0) >= 0.55 else []
+
+
 def retrieve(question: str, top_k: int | None = None, source_types: list[str] | None = None) -> list[dict]:
-    """Embed the question and pull the closest chunks out of ChromaDB."""
+    """Embed the question and pull the closest chunks out of ChromaDB with scoped source types."""
     top_k = top_k or config.TOP_K
-    where = {"source_type": {"$in": source_types}} if source_types else None
+
+    if source_types is None:
+        msg_l = question.lower()
+        if any(w in msg_l for w in ["my resume", "my cv", "candidate resume", "my experience", "my projects"]):
+            source_types = ["candidate_resume"]
+        elif any(w in msg_l for w in ["job description", "company jd", "jd requirement"]):
+            source_types = ["company_jd"]
+        else:
+            # Default to institutional policy knowledge base
+            source_types = ["bmu_policy", "uploaded_document"]
+
+    if len(source_types) == 1:
+        where = {"source_type": source_types[0]}
+    else:
+        where = {"source_type": {"$in": source_types}}
+
     hits = vectorstore.query(llm.embed_one(question), top_k, where)
-    return [h for h in hits if h["distance"] <= config.MAX_DISTANCE]
+    valid_hits = [h for h in hits if h["distance"] <= config.MAX_DISTANCE]
+    return filter_relevant_hits(valid_hits, question)
 
 
 def build_context(hits: list[dict]) -> str:
@@ -57,6 +116,7 @@ def _sources(hits: list[dict]) -> list[dict]:
             "page": hit.get("page"),
             "score": hit["score"],
             "excerpt": hit["text"][:320] + ("..." if len(hit["text"]) > 320 else ""),
+            "citation": f"[{index}] {hit.get('document_name', 'Document')}" + (f" > {hit['section']}" if hit.get("section") else "") + (f" (page {hit['page']})" if hit.get("page") else ""),
         }
         for index, hit in enumerate(hits, start=1)
     ]

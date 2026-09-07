@@ -59,7 +59,16 @@ def ingest_knowledge_base() -> dict:
     """Ingest everything currently sitting in knowledge/."""
     results = ingest_directory(config.BMU_DIR, "bmu_policy")
     results += ingest_directory(config.UPLOAD_DIR, "uploaded_document")
+
+    # Ingest interview question bank (idempotent — safe to re-run)
+    question_bank_report = None
+    if config.INTERVIEW_QUESTION_BANK_PATH.exists():
+        from app.services import question_bank
+        question_bank_report = question_bank.ingest_question_bank()
+
     return {
         "documents": results,
         "total_chunks": sum(r.get("chunks", 0) for r in results),
+        "question_bank": question_bank_report,
     }
+

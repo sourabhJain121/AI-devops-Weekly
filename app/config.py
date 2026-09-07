@@ -40,5 +40,16 @@ MAX_DISTANCE = float(os.getenv("MAX_DISTANCE", "0.65"))
 KNOWLEDGE_DIR = Path(os.getenv("KNOWLEDGE_DIR", str(BASE_DIR / "knowledge")))
 BMU_DIR = KNOWLEDGE_DIR / "bmu"
 UPLOAD_DIR = KNOWLEDGE_DIR / "uploads"
+INTERVIEW_QUESTION_BANK_PATH = Path(os.getenv(
+    "INTERVIEW_QUESTION_BANK_PATH",
+    str(KNOWLEDGE_DIR / "interview_question_bank" / "interview_question_bank.json"),
+))
 
 SUPPORTED_SUFFIXES = {".md", ".txt", ".pdf"}
+
+# --- Web search / Company Intelligence ---
+WEB_SEARCH_PROVIDER = os.getenv("WEB_SEARCH_PROVIDER", "duckduckgo")
+WEB_SEARCH_TIMEOUT = int(os.getenv("WEB_SEARCH_TIMEOUT", "10"))
+WEB_SEARCH_MAX_RESULTS = int(os.getenv("WEB_SEARCH_MAX_RESULTS", "5"))
+WEB_CONTENT_MAX_SIZE = int(os.getenv("WEB_CONTENT_MAX_SIZE", "50000"))
+WEB_CACHE_TTL = int(os.getenv("WEB_CACHE_TTL", "3600"))

@@ -158,6 +158,19 @@ def get_company_jd(company_id: str) -> dict | None:
     return entities
 
 
+def get_all_company_jds() -> list[dict]:
+    """Retrieve all loaded/cached company JD entities."""
+    if _COMPANY_JDS:
+        return list(_COMPANY_JDS.values())
+    for item in list_company_jds():
+        cid = item.get("company_id")
+        if cid:
+            jd_obj = get_company_jd(cid)
+            if jd_obj:
+                _COMPANY_JDS[cid] = jd_obj
+    return list(_COMPANY_JDS.values())
+
+
 def list_company_jds() -> list[dict]:
     """List all indexed company JDs."""
     stats = vectorstore.stats()
